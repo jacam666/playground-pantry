@@ -8,7 +8,7 @@ export default function Home() {
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
           <Link href="/" className="flex items-center gap-3">
             <Image
-              src="/images/playground-pantry-logo.png"
+              src="/images/Playground-Pantry-logo.png"
               alt="pantry logo"
               width={90}
               height={36}
@@ -42,7 +42,7 @@ export default function Home() {
       </header>
       <section className="mx-auto flex max-w-7xl flex-col items-center justify-center px-6 py-24 text-center">
         <Image
-          src="/images/playground-pantry-logo.png"
+          src="/images/Playground-Pantry-logo.png"
           alt="Playground Pantry"
           width={500}
           height={500}
