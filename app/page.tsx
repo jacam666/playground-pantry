@@ -122,7 +122,7 @@ export default function Home() {
 
         {/* menu grid */}
 
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 md:grid-cols-5">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 md:grid-cols-5 mb-12">
 
           {/* mascot 1 */}
           <Image
@@ -134,45 +134,45 @@ export default function Home() {
           />
 
           {/* week 1 */}
-          <div className="group flex flex-col items-center">
+          <div className="group flex flex-col items-center bg-pink-50 rounded-xl p-4 shadow-lg transition duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl">
+            <p className="mt-5 text-2xl font-bold text-slate-900">WEEK 1</p>
             <div className="overflow-hidden rounded-2xl shadow-lg transition duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl">
               <Image
                 src="/images/menu-week-1-v4.png"
                 alt="Sample Menu"
                 width={500}
                 height={500}
-                className="mb-8 h-auto"
+                className="mt-8 h-auto"
               />
             </div>
-            <p className="mt-5 text-xl font-bold text-slate-900">WEEK 1</p>
           </div>
 
           {/* week 2 */}
-          <div className="group flex flex-col items-center">
+          <div className="group flex flex-col items-center bg-green-50 rounded-xl p-4 shadow-lg transition duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl">
+            <p className="mt-5 text-2xl font-bold text-slate-900">WEEK 2</p>
             <div className="overflow-hidden rounded-2xl shadow-lg transition duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl">
               <Image
                 src="/images/menu-week-2-v2.png"
                 alt="Sample Menu"
                 width={500}
                 height={500}
-                className="mb-8 h-auto"
+                className="mt-8 h-auto"
               />
             </div>
-            <p className="mt-5 text-xl font-bold text-slate-900">WEEK 2</p>
           </div>
 
           {/* week 3 */}
-          <div className="group flex flex-col items-center">
+          <div className="group flex flex-col items-center bg-yellow-50 rounded-xl p-4 shadow-lg transition duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl">
+            <p className="mt-5 text-2xl font-bold text-slate-900">WEEK 3</p>
             <div className="overflow-hidden rounded-2xl shadow-lg transition duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl">
               <Image
                 src="/images/menu-week-3-v1.png"
                 alt="Sample Menu"
                 width={500}
                 height={500}
-                className="mb-8 h-auto"
+                className="mt-8 h-auto"
               />
             </div>
-            <p className="mt-5 text-xl font-bold text-slate-900">WEEK 3</p>
           </div>
 
           {/* mascot 2 */}
