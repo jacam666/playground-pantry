@@ -165,15 +165,15 @@ export default function Home() {
 
             {/* member 1 */}
             <div className="group flex flex-col bg-pink-50 rounded-xl p-6 shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
-              <div className="flex flex-row items-center gap-4">
+              <div className="flex flex-row items-center justify-evenly gap-4">
                 <Image
-                  src="/images/happy-face.png"
+                  src="/images/claire-headshot-pro.png"
                   alt="Claire"
                   width={96}
-                  height={96}
-                  className="h-24 w-24 object-contain rounded-full"
+                  height={96} 
+                  className="h-24 w-24 rounded-full object-cover"
                 />
-                <h3 className="text-xl font-bold text-slate-900">Claire</h3>
+                <h3 className="text-xl font-bold text-slate-900">Claire</ h3>
               </div>
               <p className="mt-4 text-left text-lg text-slate-600">
                 Claire is the proud owner of Playground Pantry, bringing over 15 years of experience in school catering and a real passion for providing children with fresh, nutritious and delicious food. She believes healthy meals should be something children look forward to, creating balanced menus that keep young diners happy, fuelled and ready for the day ahead.
@@ -188,7 +188,7 @@ export default function Home() {
                   alt="Rachel"
                   width={96}
                   height={96}
-                  className="h-24 w-24 object-contain rounded-full"
+                  className="h-36 w-36 object-contain rounded-full"
                 />
                 <h3 className="text-xl font-bold text-slate-900">Rachel</h3>
               </div>
@@ -205,7 +205,7 @@ export default function Home() {
                   alt="Coming soon"
                   width={96}
                   height={96}
-                  className="h-24 w-24 object-contain rounded-full"
+                  className="h-36 w-36 object-contain rounded-full"
                 />
                 <h3 className="text-xl font-bold text-slate-900">Coming Soon</h3>
               </div>
