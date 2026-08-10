@@ -20,18 +20,19 @@ export default function Home() {
             />
           </Link>
 
-          <nav className="flex items-center gap-2 text-sm font-semibold text-gray-700">
-            <Link href="#menus" className="rounded-full px-4 py-2 transition hover:bg-green-100 hover:text-green-700">
+          <nav className="flex items-center gap-1 text-sm font-semibold text-gray-700">
+            <Link href="#menus" className="rounded-full px-3 py-2 transition hover:bg-green-100 hover:text-green-700 sm:px-4">
               🍓 Menus
             </Link>
-            <Link href="#who-we-are" className="rounded-full px-4 py-2 transition hover:bg-green-100 hover:text-green-700">
+            <Link href="#who-we-are" className="rounded-full px-3 py-2 transition hover:bg-green-100 hover:text-green-700 sm:px-4">
               👨‍🍳 Who We Are
             </Link>
             <Link
               href="#contact"
-              className="rounded-full bg-green-400 px-4 py-2 text-white transition hover:bg-green-500 hover:scale-105"
+              className="rounded-full bg-green-400 px-3 py-2 text-white transition hover:bg-green-500 hover:scale-105 sm:px-4"
             >
-              👋 Contact
+              <span className="sm:hidden">👋</span>
+              <span className="hidden sm:inline">👋 Contact</span>
             </Link>
           </nav>
         </div>
