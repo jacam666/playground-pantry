@@ -323,12 +323,12 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mx-auto mt-12 flex items-center justify-center gap-8">
-          <Image src="/images/strawberry.png" alt="" aria-hidden="true" width={80} height={80} className="h-16 w-16 object-contain opacity-70" />
+        <div className="mx-auto mt-12 flex items-center justify-center gap-4">
+          <Image src="/images/mascot-4-removebg-preview.png" alt="mascot-4" aria-hidden="true" width={80} height={80} className="h-32 w-32 object-contain opacity-70" />
           <p className="text-center text-lg font-semibold text-slate-600">
             We look forward to hearing from you! 🌟
           </p>
-          <Image src="/images/carrot.png" alt="" aria-hidden="true" width={80} height={80} className="h-16 w-16 object-contain opacity-70" />
+          <Image src="/images/mascot-5-removebg-preview.png" alt="mascot-5" aria-hidden="true" width={80} height={80} className="h-32 w-32 object-contain opacity-70" />
         </div>
       </section>
 
