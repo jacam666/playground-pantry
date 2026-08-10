@@ -363,18 +363,21 @@ export default function Home() {
       </section>
 
       {/* ── Footer ── */}
-      <footer className="bg-slate-900 px-6 py-10 text-center text-slate-400">
+      <footer className="bg-green-400 px-6 py-10 text-center text-white">
         <Image
-          src="/images/Playground-Pantry-logo-removebg-preview.png"
+          src="/images/Playground-Pantry-logo.png"
           alt="Playground Pantry"
           width={80}
           height={80}
-          className="mx-auto mb-4 h-auto w-16 object-contain filter invert"
+          className="mx-auto mb-4 h-auto w-16 object-contain rounded-full"
         />
-        <p className="text-sm">
+        <div className="mb-3 flex justify-center gap-3 text-2xl">
+          <span>🍓</span><span>🥕</span><span>🥦</span><span>🍎</span><span>🌽</span>
+        </div>
+        <p className="text-sm font-semibold">
           &copy; {new Date().getFullYear()} Playground Pantry Ltd. All rights reserved.
         </p>
-        <p className="mt-1 text-xs">
+        <p className="mt-1 text-xs text-green-100">
           Leedon Lower School, Highfield Road, LU7 3LZ
         </p>
       </footer>
