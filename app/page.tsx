@@ -60,7 +60,7 @@ export default function Home() {
           helping children enjoy healthy food every day.
         </p>
 
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-8">
+        <div className="mt-10 flex flex-row items-center justify-center sm:gap-8 md:gap-12">
           <Link
             href="#menus"
             className="group flex flex-col items-center"
