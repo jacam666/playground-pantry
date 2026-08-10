@@ -122,7 +122,16 @@ export default function Home() {
 
         {/* menu grid */}
 
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 md:grid-cols-3">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 md:grid-cols-5">
+
+          {/* mascot 1 */}
+          <Image
+            src="/images/mascot-1.png"
+            alt="Mascot 1"
+            width={128}
+            height={128}
+            className="h-54 w-60 object-contain items-center justify-center my-auto mx-auto rounded-full"
+          />
 
           {/* week 1 */}
           <div className="group flex flex-col items-center">
@@ -151,6 +160,7 @@ export default function Home() {
             </div>
             <p className="mt-5 text-xl font-bold text-slate-900">WEEK 2</p>
           </div>
+
           {/* week 3 */}
           <div className="group flex flex-col items-center">
             <div className="overflow-hidden rounded-2xl shadow-lg transition duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl">
@@ -164,6 +174,15 @@ export default function Home() {
             </div>
             <p className="mt-5 text-xl font-bold text-slate-900">WEEK 3</p>
           </div>
+
+          {/* mascot 2 */}
+          <Image
+            src="/images/mascot-2.png"
+            alt="Mascot 2"
+            width={128}
+            height={128}
+            className="h-54 w-60 object-contain items-center justify-center my-auto mx-auto rounded-full"
+          />
         </div>
       </section>
 
