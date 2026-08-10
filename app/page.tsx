@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import MenuLightbox from "./components/MenuLightbox";
 
 export default function Home() {
   return (
@@ -128,47 +129,7 @@ export default function Home() {
             className=" h-auto w-48 object-contain my-auto mx-auto md:block"
           />
 
-          {/* week 1 */}
-          <div className="group flex flex-col items-center bg-pink-50 rounded-xl p-4 shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
-            <p className="mt-5 text-2xl font-bold text-slate-900">WEEK 1</p>
-            <div className="overflow-hidden rounded-2xl mt-8">
-              <Image
-                src="/images/menu-week-1-v4.png"
-                alt="Week 1 menu"
-                width={500}
-                height={500}
-                className="h-auto"
-              />
-            </div>
-          </div>
-
-          {/* week 2 */}
-          <div className="group flex flex-col items-center bg-green-50 rounded-xl p-4 shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
-            <p className="mt-5 text-2xl font-bold text-slate-900">WEEK 2</p>
-            <div className="overflow-hidden rounded-2xl mt-8">
-              <Image
-                src="/images/menu-week-2-v2.png"
-                alt="Week 2 menu"
-                width={500}
-                height={500}
-                className="h-auto"
-              />
-            </div>
-          </div>
-
-          {/* week 3 */}
-          <div className="group flex flex-col items-center bg-yellow-50 rounded-xl p-4 shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
-            <p className="mt-5 text-2xl font-bold text-slate-900">WEEK 3</p>
-            <div className="overflow-hidden rounded-2xl mt-8">
-              <Image
-                src="/images/menu-week-3-v1.png"
-                alt="Week 3 menu"
-                width={500}
-                height={500}
-                className="h-auto"
-              />
-            </div>
-          </div>
+          <MenuLightbox />
 
           {/* mascot 2 — hidden on mobile */}
           <Image
