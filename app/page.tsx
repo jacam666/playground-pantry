@@ -39,7 +39,7 @@ export default function Home() {
       </header>
 
       {/* ── Hero ── */}
-      <section className="bg-blue-50 px-6 py-24">
+      <section className="bg-blue-50 px-6 py-12">
         <div className="mx-auto flex max-w-7xl flex-col items-center text-center">
           <Image
             src="/images/Playground-Pantry-logo.png"
@@ -74,6 +74,15 @@ export default function Home() {
               </div>
               <span className="text-base font-black text-slate-700 tracking-wide">SEE OUR MENUS 🍽️</span>
             </Link>
+
+            <Image
+              src="/images/mascot-3-removebg-preview.png"
+              alt="mascot-3"
+              width={200}
+              height={200}
+              className="hidden h-auto w-48 object-contain my-auto mx-auto md:block"
+            />
+
             <Link href="#contact" className="group flex flex-col items-center gap-3">
               <div className="rounded-3xl bg-orange-100 p-5 shadow-lg transition duration-300 group-hover:-rotate-6 group-hover:scale-110 group-hover:shadow-2xl">
                 <Image
@@ -98,7 +107,7 @@ export default function Home() {
       </div>
 
       {/* ── Our Menus ── */}
-      <section id="menus" className="scroll-mt-24 bg-slate-50 px-6 py-20">
+      <section id="menus" className="scroll-mt-24 bg-slate-50 px-6 py-12">
         <div className="mx-auto mb-12 max-w-7xl text-center">
           <h2 className="mb-4 text-4xl font-bold text-slate-900 sm:text-5xl">Our Menus</h2>
           <p className="mx-auto max-w-2xl text-lg text-slate-600">
@@ -111,12 +120,12 @@ export default function Home() {
 
           {/* mascot 1 — hidden on mobile so layout doesn't break */}
           <Image
-            src="/images/mascot-1.png"
+            src="/images/mascot-1-removebg-preview.png"
             alt=""
             aria-hidden="true"
             width={200}
             height={200}
-            className="hidden h-auto w-48 object-contain my-auto mx-auto md:block"
+            className=" h-auto w-48 object-contain my-auto mx-auto md:block"
           />
 
           {/* week 1 */}
@@ -163,12 +172,12 @@ export default function Home() {
 
           {/* mascot 2 — hidden on mobile */}
           <Image
-            src="/images/mascot-2.png"
+            src="/images/mascot-2-removebg-preview.png"
             alt=""
             aria-hidden="true"
             width={200}
             height={200}
-            className="hidden h-auto w-48 object-contain my-auto mx-auto md:block"
+            className=" h-auto w-48 object-contain my-auto mx-auto md:block"
           />
         </div>
       </section>
