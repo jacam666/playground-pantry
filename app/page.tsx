@@ -161,11 +161,11 @@ export default function Home() {
             accessible and enjoyable for all.
           </p>
 
-          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-3">
+          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
 
             {/* member 1 */}
             <div className="group flex flex-col bg-pink-50 rounded-xl p-6 shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
-              <div className="flex flex-row items-center justify-evenly gap-4">
+              <div className="flex flex-row items-center gap-4">
                 <Image
                   src="/images/claire-headshot-pro.png"
                   alt="Claire"
@@ -227,7 +227,7 @@ export default function Home() {
       {/* ── Contact ── */}
       <section
         id="contact"
-        className="scroll-mt-24 px-6 py-20"
+        className="scroll-mt-24 px-6 py-12"
         style={{
           backgroundColor: "#f0fdf4",
           backgroundImage: "radial-gradient(circle, #86efac 1px, transparent 1px)",
