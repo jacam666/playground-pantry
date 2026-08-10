@@ -116,7 +116,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 md:grid-cols-5 mb-12">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 md:grid-cols-5">
 
           {/* mascot 1 — hidden on mobile so layout doesn't break */}
           <Image
@@ -190,7 +190,7 @@ export default function Home() {
       </div>
 
       {/* ── Who We Are ── */}
-      <section id="who-we-are" className="scroll-mt-24 bg-yellow-50 px-6 py-20">
+      <section id="who-we-are" className="scroll-mt-24 bg-yellow-50 px-6 py-12">
         <div className="mx-auto max-w-7xl text-center">
           <h2 className="mb-4 text-4xl font-bold text-slate-900 sm:text-5xl">Who We Are</h2>
           <p className="mx-auto max-w-2xl text-lg text-slate-600">
