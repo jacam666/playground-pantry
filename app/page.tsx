@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import MenuLightbox from "./components/MenuLightbox";
+import ContactForm from "./components/ContactForm";
 
 export default function Home() {
   return (
@@ -119,7 +120,7 @@ export default function Home() {
 
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 md:grid-cols-5">
 
-          {/* mascot 1 — hidden on mobile so layout doesn't break */}
+          {/* mascot 1  */}
           <Image
             src="/images/mascot-1-removebg-preview.png"
             alt=""
@@ -131,7 +132,7 @@ export default function Home() {
 
           <MenuLightbox />
 
-          {/* mascot 2 — hidden on mobile */}
+          {/* mascot 2  */}
           <Image
             src="/images/mascot-2-removebg-preview.png"
             alt=""
@@ -282,53 +283,15 @@ export default function Home() {
             </div>
           </div>
 
-          {/* contact form card */}
-          <div className="flex flex-col justify-center rounded-3xl border-4 border-pink-300 bg-white p-8 shadow-lg">
-            <h3 className="mb-6 text-2xl font-bold text-slate-900">Send us a message</h3>
-            <form className="flex flex-col gap-4">
-              <div>
-                <label htmlFor="contact-name" className="mb-1 block text-sm font-bold text-slate-600">Your Name</label>
-                <input
-                  id="contact-name"
-                  type="text"
-                  placeholder="e.g. Mrs Smith"
-                  className="w-full rounded-2xl border-2 border-slate-200 px-4 py-3 text-slate-800 outline-none transition focus:border-green-400"
-                />
-              </div>
-              <div>
-                <label htmlFor="contact-email" className="mb-1 block text-sm font-bold text-slate-600">Email Address</label>
-                <input
-                  id="contact-email"
-                  type="email"
-                  placeholder="you@example.com"
-                  className="w-full rounded-2xl border-2 border-slate-200 px-4 py-3 text-slate-800 outline-none transition focus:border-green-400"
-                />
-              </div>
-              <div>
-                <label htmlFor="contact-message" className="mb-1 block text-sm font-bold text-slate-600">Message</label>
-                <textarea
-                  id="contact-message"
-                  rows={4}
-                  placeholder="What would you like to know?"
-                  className="w-full resize-none rounded-2xl border-2 border-slate-200 px-4 py-3 text-slate-800 outline-none transition focus:border-green-400"
-                />
-              </div>
-              <button
-                type="submit"
-                className="mt-2 rounded-2xl bg-green-400 px-6 py-3 text-lg font-bold text-white shadow transition hover:scale-105 hover:bg-green-500 active:scale-95"
-              >
-                Send Message 🚀
-              </button>
-            </form>
-          </div>
+          <ContactForm />
         </div>
 
         <div className="mx-auto mt-12 flex items-center justify-center gap-4">
-          <Image src="/images/mascot-4-removebg-preview.png" alt="mascot-4" aria-hidden="true" width={80} height={80} className="h-32 w-32 object-contain opacity-70" />
+          <Image src="/images/mascot-4-removebg-preview.png" alt="mascot-4" aria-hidden="true" width={80} height={80} className="h-32 w-32 object-contain" />
           <p className="text-center text-lg font-semibold text-slate-600">
             We look forward to hearing from you! 🌟
           </p>
-          <Image src="/images/mascot-5-removebg-preview.png" alt="mascot-5" aria-hidden="true" width={80} height={80} className="h-32 w-32 object-contain opacity-70" />
+          <Image src="/images/mascot-5-removebg-preview.png" alt="mascot-5" aria-hidden="true" width={80} height={80} className="h-32 w-32 object-contain" />
         </div>
       </section>
 
