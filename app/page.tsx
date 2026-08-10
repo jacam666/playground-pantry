@@ -249,7 +249,7 @@ export default function Home() {
                 <p className="text-sm font-bold uppercase tracking-wide text-slate-400">Email</p>
                 <a
                   href="mailto:playgroundpantryltd@gmail.com"
-                  className="text-lg font-semibold text-green-600 transition hover:scale-105 hover:text-green-800"
+                  className="break-all text-lg font-semibold text-green-600 transition hover:scale-105 hover:text-green-800"
                 >
                   playgroundpantryltd@gmail.com
                 </a>
