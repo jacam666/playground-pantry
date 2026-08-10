@@ -186,6 +186,76 @@ export default function Home() {
         </div>
       </section>
 
-    </main>
+      <section id="who-we-are" className="scroll-mt-24 bg-yellow-50 px-6 py-20">
+        <div className="mx-auto mb-12 max-w-7xl text-center">
+          <h1 className="mb-4 text-center text-4xl font-bold text-slate-900 sm:text-5xl">
+            Who We Are
+          </h1>
+          <p className="mx-auto max-w-2xl text-center text-lg text-slate-600">
+            Playground Pantry is dedicated to providing healthy and delicious meals for children, ensuring they have the nutrition they need to thrive.
+          </p>
+          <div className="mx-auto max-w-7xl text-center">
+            <p className="mx-auto max-w-2xl text-center text-lg text-slate-600">We believe that healthy eating habits start at a young age, and we are committed to making nutritious meals accessible and enjoyable for all.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 p-12">
+
+            {/* member 1 */}
+            <div className="flex flex-col bg-pink-50 rounded-xl p-4 shadow-lg transition duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl">
+              <div className="flex flex-row items-center gap-4">
+                <Image
+                  src="/images/happy-face.png"
+                  alt="Team Member 1"
+                  width={300}
+                  height={300}
+                  className="h-24 w-24 object-contain items-center justify-center my-auto rounded-full"
+                />
+                <h1 className="mt-4 text-xl my-auto mx-auto font-bold text-slate-900">Claire</h1>
+              </div>
+              <p className="mt-4 text-lg text-slate-600">
+                Claire is a passionate nutritionist with over 15 years of experience in child nutrition. She is dedicated to creating balanced and delicious meals that promote healthy growth and development in children.
+              </p>
+            </div>
+
+            {/* member 2 */}
+            <div className="flex flex-col bg-pink-50 rounded-xl p-4 shadow-lg transition duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl">
+              <div className="flex flex-row items-center gap-4">
+                <Image
+                  src="/images/happy-face.png"
+                  alt="Team Member 1"
+                  width={300}
+                  height={300}
+                  className="h-24 w-24 object-contain items-center justify-center my-auto rounded-full"
+                />
+                <h1 className="mt-4 text-xl my-auto mx-auto font-bold text-slate-900">Rachel</h1>
+              </div>
+              <p className="mt-4 text-lg text-slate-600">
+                 Rachel is a dedicated chef with a love for creating nutritious and flavorful meals for children. With her culinary expertise, she ensures that every dish is not only healthy but also appealing to young taste buds.
+              </p>
+            </div>
+
+            {/* member 3 */}
+            <div className="flex flex-col bg-pink-50 rounded-xl p-4 shadow-lg transition duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl">
+              <div className="flex flex-row items-center gap-4">
+                <Image
+                  src="/images/happy-face.png"
+                  alt="Team Member 1"
+                  width={300}
+                  height={300}
+                  className="h-24 w-24 object-contain items-center justify-center my-auto rounded-full"
+                />
+                <h1 className="mt-4 text-xl my-auto mx-auto font-bold text-slate-900">To be disclosed</h1>
+              </div>
+              <p className="mt-4 text-lg text-slate-600">
+                
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+      </section>
+
+    </main >
   );
 }
