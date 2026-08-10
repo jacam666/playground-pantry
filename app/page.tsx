@@ -188,7 +188,7 @@ export default function Home() {
                   alt="Rachel"
                   width={96}
                   height={96}
-                  className="h-36 w-36 object-contain rounded-full"
+                  className="h-24 w-24 object-cover rounded-full"
                 />
                 <h3 className="text-xl font-bold text-slate-900">Rachel</h3>
               </div>
@@ -205,7 +205,7 @@ export default function Home() {
                   alt="Coming soon"
                   width={96}
                   height={96}
-                  className="h-36 w-36 object-contain rounded-full"
+                  className="h-24 w-24 object-cover rounded-full"
                 />
                 <h3 className="text-xl font-bold text-slate-900">Coming Soon</h3>
               </div>
