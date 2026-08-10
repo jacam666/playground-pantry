@@ -60,20 +60,49 @@ export default function Home() {
           helping children enjoy healthy food every day.
         </p>
 
-        <div className="mt-10 flex gap-4">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-8">
           <Link
-            href="/products"
-            className="rounded-full bg-cyan-500 px-8 py-4 font-semibold transition hover:bg-cyan-600"
+            href="/menus"
+            className="group flex flex-col items-center"
           >
-            View Menus
-          </Link>
+            <div className="relative flex h-48 w-48 items-center justify-center transition duration-300 group-hover:-rotate-6 group-hover:scale-110">
 
-          <a
+              <Image
+                src="/images/strawberry.png"
+                alt="Strawberry"
+                width={128}
+                height={128}
+                className="h-36 w-36 object-contain"
+              />
+
+              {/* Text on top of image */}
+              <span className="absolute left-1/2 top-[60%] -translate-x-1/4 -translate-y-1/2 text-sm font-black text-white">
+                MENUS
+              </span>
+
+            </div>
+          </Link>
+          <Link
             href="#contact"
-            className="rounded-full border border-slate-300 px-8 py-4 font-semibold text-slate-900 transition hover:bg-slate-100"
+            className="group flex flex-col items-center"
           >
-            Contact Us
-          </a>
+            <div className="relative flex h-48 w-48 items-center justify-center transition duration-300 group-hover:-rotate-6 group-hover:scale-110">
+
+              <Image
+                src="/images/carrot.png"
+                alt="Carrot"
+                width={128}
+                height={128}
+                className="h-36 w-36 object-contain"
+              />
+
+              {/* Text on top of image */}
+              <span className="absolute left-1/3 top-[58%] -translate-x-1/4 -translate-y-1/2 text-sm font-black text-white">
+                CONTACT
+              </span>
+
+            </div>
+          </Link>
         </div>
       </section>
       <section>
