@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white text-white">
+    <main className="min-h-screen bg-blue-50 text-white">
       <header className="sticky top-0 z-20  bg-white/95 backdrop-blur">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
           <Link href="/" className="flex items-center gap-3">
@@ -13,7 +13,7 @@ export default function Home() {
               width={90}
               height={36}
               priority
-              className="h-auto w-[60px] sm:w-[70px]"
+              className="h-auto w-[60px] sm:w-[70px] "
             />
           </Link>
 
@@ -46,7 +46,7 @@ export default function Home() {
           alt="Playground Pantry"
           width={500}
           height={500}
-          className="mb-8 h-auto"
+          className="mb-8 h-auto rounded-full shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
         />
 
         <h1 className="mb-6 text-5xl font-bold text-slate-900">
@@ -62,7 +62,7 @@ export default function Home() {
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-8">
           <Link
-            href="/menus"
+            href="#menus"
             className="group flex flex-col items-center"
           >
             <div className="relative flex h-48 w-48 items-center justify-center transition duration-300 group-hover:-rotate-6 group-hover:scale-110">
@@ -72,7 +72,7 @@ export default function Home() {
                 alt="Strawberry"
                 width={128}
                 height={128}
-                className="h-36 w-36 object-contain"
+                className="h-42 w-42 object-contain"
               />
 
               {/* Text on top of image */}
@@ -93,7 +93,7 @@ export default function Home() {
                 alt="Carrot"
                 width={128}
                 height={128}
-                className="h-36 w-36 object-contain"
+                className="h-42 w-42 object-contain"
               />
 
               {/* Text on top of image */}
@@ -105,8 +105,66 @@ export default function Home() {
           </Link>
         </div>
       </section>
-      <section>
-        <h1 className="mb-6 text-5xl font-bold text-slate-900">Our Menus</h1>
+
+      {/* Our Menus */}
+      <section id="menus" className="scroll-mt-24 bg-slate-50 px-6 py-20">
+
+        {/* heading */}
+        <div className="mx-auto mb-12 max-w-7xl text-center">
+          <h1 className="mb-4 text-center text-4xl font-bold text-slate-900 sm:text-5xl">
+            Our Menus
+          </h1>
+          <p className="mx-auto max-w-2xl text-center text-lg text-slate-600">
+            Take a look at our delicious three-week menu rotation. crafted with care to provide balanced and
+            delicious meals for children.
+          </p>
+        </div>
+
+        {/* menu grid */}
+
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 md:grid-cols-3">
+
+          {/* week 1 */}
+          <div className="group flex flex-col items-center">
+            <div className="overflow-hidden rounded-2xl shadow-lg transition duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl">
+              <Image
+                src="/images/menu-week-1-v4.png"
+                alt="Sample Menu"
+                width={500}
+                height={500}
+                className="mb-8 h-auto"
+              />
+            </div>
+            <p className="mt-5 text-xl font-bold text-slate-900">WEEK 1</p>
+          </div>
+
+          {/* week 2 */}
+          <div className="group flex flex-col items-center">
+            <div className="overflow-hidden rounded-2xl shadow-lg transition duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl">
+              <Image
+                src="/images/menu-week-2-v2.png"
+                alt="Sample Menu"
+                width={500}
+                height={500}
+                className="mb-8 h-auto"
+              />
+            </div>
+            <p className="mt-5 text-xl font-bold text-slate-900">WEEK 2</p>
+          </div>
+          {/* week 3 */}
+          <div className="group flex flex-col items-center">
+            <div className="overflow-hidden rounded-2xl shadow-lg transition duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl">
+              <Image
+                src="/images/menu-week-3-v1.png"
+                alt="Sample Menu"
+                width={500}
+                height={500}
+                className="mb-8 h-auto"
+              />
+            </div>
+            <p className="mt-5 text-xl font-bold text-slate-900">WEEK 3</p>
+          </div>
+        </div>
       </section>
 
     </main>
