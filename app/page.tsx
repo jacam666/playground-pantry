@@ -184,7 +184,7 @@ export default function Home() {
             <div className="group flex flex-col bg-pink-50 rounded-xl p-6 shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
               <div className="flex flex-row items-center gap-4">
                 <Image
-                  src="/images/happy-face.png"
+                  src="/images/rachel-headshot-pro.png"
                   alt="Rachel"
                   width={96}
                   height={96}
