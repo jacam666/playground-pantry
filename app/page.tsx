@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import MenuLightbox from "./components/MenuLightbox";
 import ContactForm from "./components/ContactForm";
+import ImageCarousel from "./components/ImageCarousel";
 
 export default function Home() {
   return (
@@ -109,7 +110,7 @@ export default function Home() {
       </div>
 
       {/* ── Our Menus ── */}
-      <section id="menus" className="scroll-mt-24 bg-slate-50 px-6 py-12">
+      <section id="menus"  className="scroll-mt-24 bg-slate-50 px-6 py-12">
         <div className="mx-auto mb-12 max-w-7xl text-center">
           <h2 className="mb-4 text-4xl font-bold text-slate-900 sm:text-5xl">Our Menus</h2>
           <p className="mx-auto max-w-2xl text-lg text-slate-600">
@@ -142,6 +143,17 @@ export default function Home() {
             className=" h-auto w-48 object-contain my-auto mx-auto md:block"
           />
         </div>
+      </section>
+
+      {/* meal rotation images */}
+      <section className="bg-slate-50 px-6 py-16">
+        <div className="mx-auto mb-10 max-w-7xl text-center">
+          <h2 className="mb-3 text-4xl font-bold text-slate-900 sm:text-5xl">Meal Calendars</h2>
+          <p className="mx-auto max-w-2xl text-lg text-slate-600">
+            Browse our monthly meal calendars so you always know what&apos;s on the menu.
+          </p>
+        </div>
+        <ImageCarousel />
       </section>
 
       {/* wavy divider menus → who we are */}
