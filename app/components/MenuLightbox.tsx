@@ -4,9 +4,9 @@ import Image from "next/image";
 import { useState } from "react";
 
 const menus = [
-  { week: "WEEK 1", src: "/images/menu-week-1-v4.png", bg: "bg-pink-50" },
-  { week: "WEEK 2", src: "/images/menu-week-2-v2.png", bg: "bg-green-50" },
-  { week: "WEEK 3", src: "/images/menu-week-3-v1.png", bg: "bg-yellow-50" },
+  { week: "WEEK 1", src: "/images/menu-week-1-v6.png", bg: "bg-pink-50" },
+  { week: "WEEK 2", src: "/images/menu-week-2-v3.png", bg: "bg-green-50" },
+  { week: "WEEK 3", src: "/images/menu-week-3-v2.png", bg: "bg-yellow-50" },
 ];
 
 export default function MenuLightbox() {
