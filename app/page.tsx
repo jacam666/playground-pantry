@@ -3,43 +3,15 @@ import Link from "next/link";
 import MenuLightbox from "./components/MenuLightbox";
 import ContactForm from "./components/ContactForm";
 import ImageCarousel from "./components/ImageCarousel";
+import Navbar from "./components/Navbar";
 
 export default function Home() {
   return (
     // removed text-white — it was overriding all text colours globally
     <main className="min-h-screen bg-blue-50 text-slate-900">
 
-      {/* ── Navbar ── */}
-      <header className="sticky top-0 z-20 bg-green-50/95 backdrop-blur shadow-sm border-t-4 border-green-400">
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
-          <Link href="/" className="flex items-center gap-3">
-            <Image
-              src="/images/Playground-Pantry-logo.png"
-              alt="Playground Pantry home"
-              width={90}
-              height={36}
-              priority
-              className="h-auto w-[60px] sm:w-[70px]"
-            />
-          </Link>
+      <Navbar />
 
-          <nav className="flex items-center gap-1 text-sm font-semibold text-gray-700">
-            <Link href="#menus" className="rounded-full px-3 py-2 transition hover:bg-green-100 hover:text-green-700 sm:px-4">
-              🍓 Menus
-            </Link>
-            <Link href="#who-we-are" className="rounded-full px-3 py-2 transition hover:bg-green-100 hover:text-green-700 sm:px-4">
-              👨‍🍳 Who We Are
-            </Link>
-            <Link
-              href="#contact"
-              className="rounded-full bg-green-400 px-3 py-2 text-white transition hover:bg-green-500 hover:scale-105 sm:px-4"
-            >
-              <span className="sm:hidden">👋</span>
-              <span className="hidden sm:inline">👋 Contact</span>
-            </Link>
-          </nav>
-        </div>
-      </header>
 
       {/* ── Hero ── */}
       <section className="bg-blue-50 px-6 py-12">
@@ -105,12 +77,12 @@ export default function Home() {
       {/* wavy divider hero → menus */}
       <div className="overflow-hidden bg-slate-50">
         <svg viewBox="0 0 1440 60" className="block w-full translate-y-px" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M0,30 C360,0 1080,60 1440,30 L1440,0 L0,0 Z" fill="#eff6ff" />
+          <path d="M0,30 C360,0 1080,60 1440,30 L1440,0 L0,0 Z" fill="#fc5204" />
         </svg>
       </div>
 
       {/* ── Our Menus ── */}
-      <section id="menus"  className="scroll-mt-24 bg-slate-50 px-6 py-12">
+      <section id="menus" className="scroll-mt-24 bg-slate-50 px-6 py-12">
         <div className="mx-auto mb-12 max-w-7xl text-center">
           <h2 className="mb-4 text-4xl font-bold text-slate-900 sm:text-5xl">Our Menus</h2>
           <p className="mx-auto max-w-2xl text-lg text-slate-600">
@@ -159,7 +131,7 @@ export default function Home() {
       {/* wavy divider menus → who we are */}
       <div className="overflow-hidden bg-yellow-50">
         <svg viewBox="0 0 1440 60" className="block w-full translate-y-px" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M0,30 C360,0 1080,60 1440,30 L1440,0 L0,0 Z" fill="#f8fafc" />
+          <path d="M0,30 C360,0 1080,60 1440,30 L1440,0 L0,0 Z" fill="#fd0395" />
         </svg>
       </div>
 
@@ -182,7 +154,7 @@ export default function Home() {
                   src="/images/claire-headshot-pro.png"
                   alt="Claire"
                   width={96}
-                  height={96} 
+                  height={96}
                   className="h-24 w-24 rounded-full object-cover"
                 />
                 <h3 className="text-xl font-bold text-slate-900">Claire</ h3>
@@ -232,9 +204,70 @@ export default function Home() {
       {/* wavy divider who we are → contact */}
       <div className="overflow-hidden bg-yellow-50">
         <svg viewBox="0 0 1440 60" className="block w-full" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#f0fdf4" />
+          <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#7d03ff" />
         </svg>
       </div>
+
+
+      {/* ── Payments ── */}
+      <section id="payments" className="scroll-mt-24 bg-purple-50 px-6 py-16"
+        style={{
+          backgroundImage: "radial-gradient(circle, #d8b4fe 1px, transparent 1px)",
+          backgroundSize: "28px 28px",
+        }}
+      >
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="mb-2 text-4xl font-bold text-slate-900 sm:text-5xl">💳 Payments</h2>
+          <p className="mb-10 text-lg text-slate-600">Simple and flexible — pay in the way that suits you best!</p>
+
+          {/* price banner */}
+          <div className="mb-10 rounded-3xl border-4 border-purple-300 bg-white px-8 py-6 shadow-lg">
+            <p className="text-xl font-bold text-slate-700">Years 3 &amp; 4 — from September</p>
+            <p className="mt-2 text-5xl font-black text-purple-500">£2.70 <span className="text-2xl font-bold text-slate-500">/ day</span></p>
+            <p className="mt-1 text-lg font-semibold text-slate-500">£13.50 per week</p>
+          </div>
+
+          {/* frequency options */}
+          <div className="mb-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
+            {["Daily", "Weekly", "Half Termly", "Termly"].map((opt) => (
+              <div key={opt} className="rounded-2xl border-2 border-purple-200 bg-white py-4 px-2 text-center shadow-sm">
+                <span className="block text-2xl mb-1">✅</span>
+                <span className="text-sm font-bold text-slate-700">{opt}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* payment methods */}
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+
+            {/* cash */}
+            <div className="flex flex-col items-start gap-3 rounded-3xl border-4 border-yellow-300 bg-white p-6 shadow-lg text-left">
+              <div className="flex items-center gap-3">
+                <span className="text-4xl">💵</span>
+                <h3 className="text-xl font-bold text-slate-900">Cash</h3>
+              </div>
+              <p className="text-slate-600">
+                Place cash in an envelope marked with your child&apos;s <strong>name and class</strong>, then pop it in the post box outside the office.
+              </p>
+            </div>
+
+            {/* bank transfer */}
+            <div className="flex flex-col items-start gap-3 rounded-3xl border-4 border-green-300 bg-white p-6 shadow-lg text-left">
+              <div className="flex items-center gap-3">
+                <span className="text-4xl">🏦</span>
+                <h3 className="text-xl font-bold text-slate-900">Bank Transfer</h3>
+              </div>
+              <p className="mb-2 text-slate-600">Use your child&apos;s <strong>surname and class</strong> as the reference.</p>
+              <div className="w-full rounded-2xl bg-slate-50 p-4 text-sm font-mono text-slate-700 space-y-1">
+                <p><span className="font-bold text-slate-500">Name:</span> Playground Pantry Ltd</p>
+                <p><span className="font-bold text-slate-500">Account:</span> 11321536</p>
+                <p><span className="font-bold text-slate-500">Sort Code:</span> 09-01-29</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
 
       {/* ── Contact ── */}
       <section
