@@ -30,7 +30,7 @@ export default function ImageCarousel() {
     }
 
     return (
-        <div className="relative mx-auto w-full px-4 md:max-w-sm lg:max-w-md">
+        <div className=" relative mx-auto w-full px-4 md:max-w-sm lg:max-w-md">
             {/* slide */}
             <div className="overflow-hidden rounded-2xl shadow-xl">
                 <Image

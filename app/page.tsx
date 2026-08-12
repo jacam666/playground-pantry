@@ -118,7 +118,7 @@ export default function Home() {
       </section>
 
       {/* meal rotation images */}
-      <section className="bg-slate-50 px-6 py-16">
+      <section id="meal-calendars" className="bg-slate-50 px-6 py-16">
         <div className="mx-auto mb-10 max-w-7xl text-center">
           <h2 className="mb-3 text-4xl font-bold text-slate-900 sm:text-5xl">Meal Calendars</h2>
           <p className="mx-auto max-w-2xl text-lg text-slate-600">
