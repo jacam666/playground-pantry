@@ -100,19 +100,28 @@ export default function Home() {
             aria-hidden="true"
             width={200}
             height={200}
-            className=" h-auto w-48 object-contain my-auto mx-auto md:block"
+            className=" h-auto w-42 object-contain my-auto mx-auto md:block"
           />
 
           <MenuLightbox />
 
           {/* mascot 2  */}
+          {/* <video
+            src="/images/apple-mascot-jumping-transparent.webm"
+            autoPlay
+            loop
+            muted
+            playsInline
+            aria-hidden="true"
+            className=" h-auto w-48 object-contain my-auto mx-auto md:block"
+          /> */}
           <Image
-            src="/images/mascot-apple-jumping-2.png"
+            src="/images/mascot-apple-jumping.png"
             alt=""
             aria-hidden="true"
             width={200}
             height={200}
-            className=" h-auto w-48 object-contain my-auto mx-auto md:block"
+            className=" h-auto w-64 object-contain my-auto mx-auto md:block"
           />
         </div>
       </section>
