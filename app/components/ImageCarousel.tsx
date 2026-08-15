@@ -8,7 +8,7 @@ const slides = [
     { src: "/images/calendar-images/sept-2026.png", label: "September 2026" },
     { src: "/images/calendar-images/oct-2026.png", label: "October 2026" },
     { src: "/images/calendar-images/november-2026.png", label: "November 2026" },
-    { src: "/images/calendar-images/december-2026-v2.png", label: "December 2026" },
+    { src: "/images/calendar-images/december-2026-v3.png", label: "December 2026" },
     { src: "/images/calendar-images/jan-2027.png", label: "January 2027" },
     { src: "/images/calendar-images/february-2027.png", label: "February 2027" },
     { src: "/images/calendar-images/march-2027-v2.png", label: "March 2027" },
