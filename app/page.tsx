@@ -115,7 +115,7 @@ export default function Home() {
 
           
           <video
-            src="/videos/can-you-ma-Video-Anthro-Broccoli-Joyful-Running-Loop-v2.webm"
+            src="/videos/can-you-ma-Video-Anthro-Broccoli-Joyful-Running-Loop.mp4"
             autoPlay
             loop
             muted
