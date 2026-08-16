@@ -50,14 +50,24 @@ export default function Home() {
               <span className="text-base font-black text-slate-700 tracking-wide">SEE OUR MENUS 🍽️</span>
             </Link>
 
-            <Image
+            {/* <Image
               src="/images/mascot-carrot-waving.png"
               alt="mascot-3"
               width={200}
               height={200}
               className="hidden h-auto w-36 object-contain my-auto mx-auto md:block"
+            /> */}
+
+            <Image
+              src="/videos/dancing-carrot-transparent.webp"
+              alt=""
+              aria-hidden="true"
+              width={640}
+              height={360}
+              unoptimized
+              className="hidden h-auto w-90 object-contain my-auto mx-auto md:block"
             />
-            
+
             {/* <video
               src="/videos/dancing-carrot-v1.webm"
               autoPlay
@@ -113,7 +123,7 @@ export default function Home() {
             className=" h-auto w-42 object-contain my-auto mx-auto md:block"
           /> */}
 
-          
+
           <video
             src="/videos/can-you-ma-Video-Anthro-Broccoli-Joyful-Running-Loop.mp4"
             autoPlay
@@ -136,7 +146,7 @@ export default function Home() {
             aria-hidden="true"
             className=" h-auto w-60 object-contain my-auto mx-auto md:block"
           />
-            {/* <Image
+          {/* <Image
               src="/images/mascot-apple-jumping.png"
               alt=""
               aria-hidden="true"
@@ -297,7 +307,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+
 
       {/* ── Contact ── */}
       <section
