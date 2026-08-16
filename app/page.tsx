@@ -65,7 +65,7 @@ export default function Home() {
               muted
               playsInline
               aria-hidden="true"
-              className="hidden h-48 w-auto my-auto mx-auto md:block"
+              className="hidden h-auto w-90 max-w-24 object-contain my-auto mx-auto md:block"
             />
 
             <Link href="#contact" className="group flex flex-col items-center gap-3">
@@ -148,7 +148,7 @@ export default function Home() {
       </section>
 
       {/* meal rotation images */}
-      <section id="meal-calendars" className="bg-slate-50 px-6 md:pt-16 pb-16">
+      <section id="meal-calendars" className="bg-slate-50 px-6 pt-16 pb-16">
         <div className="mx-auto mb-10 max-w-7xl text-center">
           <h2 className="mb-3 text-4xl font-bold text-slate-900 sm:text-5xl">Meal Calendars</h2>
           <p className="mx-auto max-w-2xl text-lg text-slate-600">
