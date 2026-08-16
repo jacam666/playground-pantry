@@ -59,7 +59,7 @@ export default function Home() {
             /> */}
             
             <video
-              src="/videos/dancing-carrot.webm"
+              src="/videos/Video-Project-7.mp4"
               autoPlay
               loop
               muted
