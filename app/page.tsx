@@ -116,9 +116,9 @@ export default function Home() {
           {/* mascot 1  */}
           <img
             src="/videos/broccoli-running-transparent.webp"
-            alt=""
+            alt="running broccoli mascot"
             aria-hidden="true"
-            className=" h-auto w-60 object-contain my-auto mx-auto md:block"
+            className="h-auto w-60 object-contain my-auto mx-auto md:block md:w-72 lg:w-80"
           />
 
           {/* <video
@@ -134,7 +134,15 @@ export default function Home() {
           <MenuLightbox />
 
           {/* mascot 2  */}
-          <video
+
+          <img
+            src="/videos/apple-dancing-transparent.webp"
+            alt="dancing apple mascot"
+            aria-hidden="true"
+            className="h-auto w-60 object-contain my-auto mx-auto md:block md:w-72 lg:w-80"
+          />
+
+          {/* <video
             src="/videos/apple-dancing-video-v6.mp4"
             autoPlay
             loop
@@ -142,20 +150,13 @@ export default function Home() {
             playsInline
             aria-hidden="true"
             className=" h-auto w-90 object-contain my-auto mx-auto md:block"
-          />
-          {/* <Image
-              src="/images/mascot-apple-jumping.png"
-              alt=""
-              aria-hidden="true"
-              width={200}
-              height={200}
-              className=" h-auto w-64 object-contain my-auto mx-auto md:block"
-            /> */}
+          /> */}
+
         </div>
       </section>
 
       {/* meal rotation images */}
-      <section id="meal-calendars" className="bg-slate-50 px-6 pt-16 pb-16">
+      <section id="meal-calendars" className="bg-slate-50 px-6 sm:pt-16 pb-16">
         <div className="mx-auto mb-10 max-w-7xl text-center">
           <h2 className="mb-3 text-4xl font-bold text-slate-900 sm:text-5xl">Meal Calendars</h2>
           <p className="mx-auto max-w-2xl text-lg text-slate-600">
