@@ -50,12 +50,22 @@ export default function Home() {
               <span className="text-base font-black text-slate-700 tracking-wide">SEE OUR MENUS 🍽️</span>
             </Link>
 
-            <Image
+            {/* <Image
               src="/images/mascot-carrot-waving.png"
               alt="mascot-3"
               width={200}
               height={200}
               className="hidden h-auto w-36 object-contain my-auto mx-auto md:block"
+            /> */}
+            
+            <video
+              src="/videos/dancing-carrot-v1.webm"
+              autoPlay
+              loop
+              muted
+              playsInline
+              aria-hidden="true"
+              className="hidden h-48 w-auto my-auto mx-auto md:block"
             />
 
             <Link href="#contact" className="group flex flex-col items-center gap-3">
@@ -117,23 +127,23 @@ export default function Home() {
           <MenuLightbox />
 
           {/* mascot 2  */}
-          {/* <video
-            src="/images/apple-mascot-jumping-transparent.webm"
+          <video
+            src="/videos/apple-dancing-video-Picsart-BackgroundRemover.webm"
             autoPlay
             loop
             muted
             playsInline
             aria-hidden="true"
             className=" h-auto w-48 object-contain my-auto mx-auto md:block"
-          /> */}
-          <Image
-            src="/images/mascot-apple-jumping.png"
-            alt=""
-            aria-hidden="true"
-            width={200}
-            height={200}
-            className=" h-auto w-64 object-contain my-auto mx-auto md:block"
           />
+            {/* <Image
+              src="/images/mascot-apple-jumping.png"
+              alt=""
+              aria-hidden="true"
+              width={200}
+              height={200}
+              className=" h-auto w-64 object-contain my-auto mx-auto md:block"
+            /> */}
         </div>
       </section>
 
