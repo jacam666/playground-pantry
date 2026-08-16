@@ -50,23 +50,23 @@ export default function Home() {
               <span className="text-base font-black text-slate-700 tracking-wide">SEE OUR MENUS 🍽️</span>
             </Link>
 
-            <Image
+            {/* <Image
               src="/images/mascot-carrot-waving.png"
               alt="mascot-3"
               width={200}
               height={200}
               className="hidden h-auto w-36 object-contain my-auto mx-auto md:block"
-            />
+            /> */}
             
-            {/* <video
-              src="/videos/dancing-carrot-v1.webm"
+            <video
+              src="/videos/dancing-carrot.webm"
               autoPlay
               loop
               muted
               playsInline
               aria-hidden="true"
-              className="hidden h-auto w-90 max-w-24 object-contain my-auto mx-auto md:block"
-            /> */}
+              className="hidden h-auto w-28 object-contain my-auto mx-auto sm:w-32 md:block md:w-60 lg:w-92"
+            />
 
             <Link href="#contact" className="group flex flex-col items-center gap-3">
               <div className="rounded-3xl bg-orange-100 p-5 shadow-lg transition duration-300 group-hover:-rotate-6 group-hover:scale-110 group-hover:shadow-2xl">
@@ -92,7 +92,7 @@ export default function Home() {
       </div>
 
       {/* ── Our Menus ── */}
-      <section id="menus" className="scroll-mt-24 bg-white px-6 py-12">
+      <section id="menus" className="scroll-mt-24 bg-gray-50 px-6 py-12">
         <div className="mx-auto mb-12 max-w-7xl text-center">
           <h2 className="mb-4 text-4xl font-bold text-slate-900 sm:text-5xl">Our Menus</h2>
           <p className="mx-auto max-w-2xl text-lg text-slate-600">
@@ -115,7 +115,7 @@ export default function Home() {
 
           
           <video
-            src="/videos/can-you-ma-Video-Anthro-Broccoli-Joyful-Running-Loop.mp4"
+            src="/videos/can-you-ma-Video-Anthro-Broccoli-Joyful-Running-Loop-v2.webm"
             autoPlay
             loop
             muted
@@ -148,7 +148,7 @@ export default function Home() {
       </section>
 
       {/* meal rotation images */}
-      <section id="meal-calendars" className="bg-slate-50 px-6 pt-16 pb-16">
+      <section id="meal-calendars" className="bg-slate-50 px-6 sm:pt-16 pb-16">
         <div className="mx-auto mb-10 max-w-7xl text-center">
           <h2 className="mb-3 text-4xl font-bold text-slate-900 sm:text-5xl">Meal Calendars</h2>
           <p className="mx-auto max-w-2xl text-lg text-slate-600">
