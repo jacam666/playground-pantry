@@ -92,7 +92,7 @@ export default function Home() {
       </div>
 
       {/* ── Our Menus ── */}
-      <section id="menus" className="scroll-mt-24 bg-gray-50 px-6 py-12">
+      <section id="menus" className="scroll-mt-24 bg-white px-6 py-12">
         <div className="mx-auto mb-12 max-w-7xl text-center">
           <h2 className="mb-4 text-4xl font-bold text-slate-900 sm:text-5xl">Our Menus</h2>
           <p className="mx-auto max-w-2xl text-lg text-slate-600">
@@ -134,7 +134,7 @@ export default function Home() {
             muted
             playsInline
             aria-hidden="true"
-            className=" h-auto w-48 object-contain my-auto mx-auto md:block"
+            className=" h-auto w-60 object-contain my-auto mx-auto md:block"
           />
             {/* <Image
               src="/images/mascot-apple-jumping.png"
