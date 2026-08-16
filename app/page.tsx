@@ -128,7 +128,7 @@ export default function Home() {
 
           {/* mascot 2  */}
           <video
-            src="/videos/apple-dancing-video.mp4"
+            src="/videos/apple-dancing-video-v6.mp4"
             autoPlay
             loop
             muted
