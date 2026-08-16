@@ -114,17 +114,14 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 md:grid-cols-5">
 
           {/* mascot 1  */}
-          {/* <Image
-            src="/images/broccoli-mascot-running.png"
+          <img
+            src="/videos/broccoli-running-transparent.webp"
             alt=""
             aria-hidden="true"
-            width={200}
-            height={200}
-            className=" h-auto w-42 object-contain my-auto mx-auto md:block"
-          /> */}
+            className=" h-auto w-60 object-contain my-auto mx-auto md:block"
+          />
 
-
-          <video
+          {/* <video
             src="/videos/can-you-ma-Video-Anthro-Broccoli-Joyful-Running-Loop.mp4"
             autoPlay
             loop
@@ -132,7 +129,7 @@ export default function Home() {
             playsInline
             aria-hidden="true"
             className=" h-auto w-48 object-contain my-auto mx-auto md:block"
-          />
+          /> */}
 
           <MenuLightbox />
 
@@ -144,7 +141,7 @@ export default function Home() {
             muted
             playsInline
             aria-hidden="true"
-            className=" h-auto w-60 object-contain my-auto mx-auto md:block"
+            className=" h-auto w-90 object-contain my-auto mx-auto md:block"
           />
           {/* <Image
               src="/images/mascot-apple-jumping.png"
