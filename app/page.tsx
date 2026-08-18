@@ -65,6 +65,7 @@ export default function Home() {
               width={640}
               height={360}
               unoptimized
+              loading="eager"
               className="hidden h-auto w-90 object-contain my-auto mx-auto md:block"
             />
 
@@ -302,6 +303,45 @@ export default function Home() {
                 <p><span className="font-bold text-slate-500">Sort Code:</span> 09-01-29</p>
               </div>
             </div>
+          </div>
+
+          {/* free school meal eligibility */}
+          <div className="mt-12 rounded-3xl border-4 border-pink-300 bg-white p-6 text-left shadow-lg sm:p-8">
+            <div className="mb-6 flex items-start gap-4">
+              <span className="text-4xl" aria-hidden="true">🍎</span>
+              <div>
+                <h3 className="text-2xl font-black text-slate-900">Free School Meals</h3>
+                <p className="mt-1 text-sm font-bold uppercase tracking-wide text-pink-500">Eligibility and support</p>
+              </div>
+            </div>
+
+            <p className="rounded-2xl bg-pink-50 p-5 text-lg leading-relaxed text-slate-700">
+              If your child is eligible for <strong>Free School Meals</strong>, please contact the school office to ensure they are registered. Playground Pantry will provide meals at no cost to eligible children.
+            </p>
+
+            <div className="mt-6 grid gap-5 sm:grid-cols-2">
+              <div className="rounded-2xl border-2 border-purple-200 bg-purple-50 p-5">
+                <h4 className="text-lg font-bold text-slate-900">Eligibility from 2026</h4>
+                <p className="mt-2 leading-relaxed text-slate-600">
+                  From the start of the 2026/27 academic year, every child in a household receiving Universal Credit will qualify for free school meals, regardless of household income. This change is part of the Children’s Wellbeing and Schools Act 2026.
+                </p>
+              </div>
+
+              <div className="rounded-2xl border-2 border-yellow-300 bg-yellow-50 p-5">
+                <h4 className="text-lg font-bold text-slate-900">The two groups</h4>
+                <ul className="mt-2 space-y-2 leading-relaxed text-slate-600">
+                  <li><strong className="text-slate-700">Targeted:</strong> Households earning £7,400 or less on Universal Credit, or receiving other qualifying benefits.</li>
+                  <li><strong className="text-slate-700">Expanded:</strong> Every other child in a Universal Credit household, regardless of earnings.</li>
+                </ul>
+              </div>
+            </div>
+
+            <p className="mt-6 leading-relaxed text-slate-600">
+              Schools and local authorities will monitor and recheck eligibility on an ongoing basis. For more details or help applying, please contact your local school office or visit the official government guidance.
+            </p>
+            <a href="https://www.gov.uk/government/publications/free-school-meals-guidance-for-schools-and-local-authorities/free-school-meals-guidance-for-local-authorities-local-authority-maintained-schools-academies-and-free-schools" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex rounded-full bg-blue-600 px-5 py-3 font-bold text-white transition hover:bg-blue-700 hover:shadow-md">
+              Government guidance <span className="ml-2" aria-hidden="true">↗</span>
+            </a>
           </div>
         </div>
       </section>
