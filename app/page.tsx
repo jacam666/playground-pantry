@@ -299,8 +299,8 @@ export default function Home() {
               <p className="mb-2 text-slate-600">Use your child&apos;s <strong>surname and class</strong> as the reference.</p>
               <div className="w-full rounded-2xl bg-slate-50 p-4 text-sm font-mono text-slate-700 space-y-1">
                 <p><span className="font-bold text-slate-500">Name:</span> Playground Pantry Ltd</p>
-                <p><span className="font-bold text-slate-500">Account:</span> 11321536</p>
-                <p><span className="font-bold text-slate-500">Sort Code:</span> 09-01-29</p>
+                <p><span className="font-bold text-slate-500">Account:</span> 49803939</p>
+                <p><span className="font-bold text-slate-500">Sort Code:</span>04-03-33</p>
               </div>
             </div>
           </div>
