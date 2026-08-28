@@ -154,8 +154,10 @@ export default function Home() {
           /> */}
 
         </div>
-        <h2 className="mx-auto mt-12 max-w-3xl text-center text-2xl font-extrabold text-slate-800">
-  All meals are also available as a gluten-free version
+        <h2 className="mt-12 flex items-center justify-center gap-3 text-center text-2xl font-extrabold text-slate-800">
+  <span aria-hidden="true">⭐</span>
+  <span>All meals are also available as a gluten-free version</span>
+  <span aria-hidden="true">⭐</span>
 </h2>
       </section>
 
