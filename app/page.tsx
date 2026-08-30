@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import MenuLightbox from "./components/MenuLightbox";
 import ContactForm from "./components/ContactForm";
 import ImageCarousel from "./components/ImageCarousel";
@@ -10,6 +10,20 @@ import Navbar from "./components/Navbar";
 
 export default function Home() {
   const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  const handleVideoEnded = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.pause();
+
+    window.setTimeout(() => {
+      video.currentTime = 0;
+      video.play();
+    }, 1000);
+  };
+
   return (
     // removed text-white — it was overriding all text colours globally
     <main className="min-h-screen bg-blue-50 text-slate-900">
@@ -28,14 +42,15 @@ export default function Home() {
 
           <section className="w-full px-6 pb-6 pt-0">
             <div className="mx-auto max-w-4xl">
-              <div className="relative overflow-hidden rounded-[2rem]">
+              <div className="relative mx-auto w-full max-w-[620px] overflow-hidden rounded-[1.5rem]">
                 <video
-                  src="/videos/playground-pantry-welcome-mascot-1x1-v1.mp4"
+                  ref={videoRef}
+                  src="/videos/playground-pantry-welcome-mascot-1x1-v2.mp4"
                   autoPlay
-                  loop
                   muted={isMuted}
                   playsInline
-                  className="mx-auto aspect-square w-full max-w-[620px] rounded-[1.5rem] bg-white object-cover"
+                  onEnded={handleVideoEnded}
+                  className="block aspect-square w-full object-contain"
                 />
 
                 <button
