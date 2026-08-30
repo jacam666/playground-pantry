@@ -148,14 +148,14 @@ export default function Home() {
         </div>
       </section>
       {/* wavy divider hero → menus */}
-      <div className="overflow-hidden bg-slate-50">
+      <div className="overflow-hidden bg-gray-100">
         <svg viewBox="0 0 1440 60" className="block w-full translate-y-px" preserveAspectRatio="none" aria-hidden="true">
           <path d="M0,30 C360,0 1080,60 1440,30 L1440,0 L0,0 Z" fill="#fc5204" />
         </svg>
       </div>
 
       {/* ── Our Menus ── */}
-      <section id="menus" className="scroll-mt-24 bg-gray-50 px-6 py-12">
+      <section id="menus" className="scroll-mt-24 bg-gray-100 px-6 py-12">
         <div className="mx-auto mb-12 max-w-7xl text-center">
           <h2 className="mb-4 text-4xl font-bold text-slate-900 sm:text-5xl">Our Menus</h2>
           <p className="mx-auto max-w-2xl text-lg text-slate-600">
@@ -167,10 +167,12 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 md:grid-cols-5">
 
           {/* mascot 1  */}
-          <img
-            src="/videos/broccoli-running-transparent.webp"
-            alt="running broccoli mascot"
-            aria-hidden="true"
+          <video
+            src="/videos/video-project-8.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
             className="h-auto w-60 object-contain my-auto mx-auto md:block md:w-72 lg:w-80"
           />
 
