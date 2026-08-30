@@ -1,11 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import MenuLightbox from "./components/MenuLightbox";
 import ContactForm from "./components/ContactForm";
 import ImageCarousel from "./components/ImageCarousel";
 import Navbar from "./components/Navbar";
 
 export default function Home() {
+  const [isMuted, setIsMuted] = useState(true);
   return (
     // removed text-white — it was overriding all text colours globally
     <main className="min-h-screen bg-blue-50 text-slate-900">
@@ -24,15 +28,24 @@ export default function Home() {
 
           <section className="w-full px-6 pb-6 pt-0">
             <div className="mx-auto max-w-4xl">
-              <div className="overflow-hidden rounded-[2rem] ">
+              <div className="relative overflow-hidden rounded-[2rem]">
                 <video
                   src="/videos/playground-pantry-welcome-mascot-1x1-v1.mp4"
                   autoPlay
                   loop
-                  muted
+                  muted={isMuted}
                   playsInline
-                  className="aspect-square w-full max-w-[620px] rounded-[1.5rem] object-cover bg-white mx-auto"
+                  className="mx-auto aspect-square w-full max-w-[620px] rounded-[1.5rem] bg-white object-cover"
                 />
+
+                <button
+                  type="button"
+                  onClick={() => setIsMuted((prev) => !prev)}
+                  className="absolute bottom-4 right-4 rounded-full bg-slate-900/80 px-3 py-2 text-xs font-bold uppercase tracking-[0.2em] text-white shadow-lg backdrop-blur-sm transition hover:bg-slate-900"
+                  aria-label={isMuted ? "Turn sound on" : "Turn sound off"}
+                >
+                  {isMuted ? "Sound on" : "Sound off"}
+                </button>
               </div>
             </div>
           </section>
