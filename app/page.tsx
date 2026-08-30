@@ -11,10 +11,8 @@ export default function Home() {
     <main className="min-h-screen bg-blue-50 text-slate-900">
 
       <Navbar />
-
-
       {/* ── Hero ── */}
-      <section className="bg-blue-50 px-6 py-12">
+      <section className="bg-gray-50 px-6 py-12">
         <div className="mx-auto flex max-w-7xl flex-col items-center text-center">
           <Image
             src="/images/Playground-Pantry-logo.png"
@@ -24,7 +22,22 @@ export default function Home() {
             className="mb-8 h-auto w-48 rounded-full shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-2xl sm:w-64"
           />
 
-          <h1 className="mb-6 text-5xl font-bold text-slate-900">
+          <section className="w-full px-6 pb-6 pt-0">
+            <div className="mx-auto max-w-4xl">
+              <div className="overflow-hidden rounded-[2rem] ">
+                <video
+                  src="/videos/playground-pantry-welcome-mascot-1x1-v1.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="aspect-square w-full max-w-[620px] rounded-[1.5rem] object-cover bg-white mx-auto"
+                />
+              </div>
+            </div>
+          </section>
+
+          {/* <h1 className="mb-6 text-5xl font-bold text-slate-900">
             Healthy School Meals,
             <br />
             Happy Children.
@@ -33,7 +46,19 @@ export default function Home() {
           <p className="max-w-2xl text-lg text-slate-600">
             Freshly prepared nutritious lunches made with quality ingredients,
             helping children enjoy healthy food every day.
-          </p>
+          </p> */}
+          <div className="mx-auto max-w-3xl">
+            <div className="text-center">
+              <p className="mb-3 text-xl font-black uppercase tracking-[0.25em] text-orange-500 sm:text-2xl">Welcome</p>
+              <h2 className="mb-4 text-4xl font-black text-slate-900 sm:text-5xl">
+                A cheerful start to every school day.
+              </h2>
+              <p className="mx-auto max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
+                Freshly prepared nutritious lunches made with quality ingredients,
+                helping children enjoy healthy food every day.
+              </p>
+            </div>
+          </div>
 
           {/* fruit CTA buttons */}
           <div className="mt-10 flex flex-row items-center justify-center gap-8 sm:gap-16">
@@ -94,7 +119,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* wavy divider hero → menus */}
       <div className="overflow-hidden bg-slate-50">
         <svg viewBox="0 0 1440 60" className="block w-full translate-y-px" preserveAspectRatio="none" aria-hidden="true">
@@ -155,10 +179,10 @@ export default function Home() {
 
         </div>
         <h2 className="mt-12 flex items-center justify-center gap-3 text-center text-2xl font-extrabold text-slate-800">
-  <span aria-hidden="true">⭐</span>
-  <span>All meals are also available as a gluten-free version</span>
-  <span aria-hidden="true">⭐</span>
-</h2>
+          <span aria-hidden="true">⭐</span>
+          <span>All meals are also available as a gluten-free version</span>
+          <span aria-hidden="true">⭐</span>
+        </h2>
       </section>
 
       {/* meal rotation images */}
