@@ -156,16 +156,19 @@ export default function Home() {
 
       {/* ── Our Menus ── */}
       <section id="menus" className="scroll-mt-24 bg-gray-100 px-0 py-12 sm:px-6">
-        <div className="mx-auto mb-6 max-w-7xl text-center">
+        <div className="mx-auto mb-4 max-w-7xl text-center">
           <h2 className="sr-only">Autumn/Winter Menus</h2>
-          <Image
-            src="/images/Autumn-Winter-Menus.png"
-            alt="Playground Pantry"
-            width={1600}
-            height={400}
-            className="mx-auto w-full max-w-[1100px] sm:w-full"
-          />
-          <p className="mx-auto mt-2 max-w-3xl px-4 text-lg font-medium leading-relaxed text-slate-700 sm:px-0 sm:text-xl">
+          <div className="mx-auto w-full max-w-[1100px] overflow-hidden rounded-xl pb-2 sm:pb-3">
+            <Image
+              src="/images/Autumn-Winter-Menus-advanced-(Desktop Wallpaper)-cropped.png"
+              alt="Playground Pantry"
+              width={1600}
+              height={400}
+              className="mx-auto block h-auto w-full mb-12 object-cover object-center"
+              style={{ aspectRatio: "1600 / 360" }}
+            />
+          </div>
+          <p className="mx-auto mt-3 max-w-3xl px-4 text-lg font-medium leading-relaxed text-slate-700 sm:px-0 sm:text-xl">
             Explore our{" "}
             <span className="font-extrabold text-amber-600">
               delicious three-week menu rotation
