@@ -78,9 +78,9 @@ export default function Home() {
           <div className="mx-auto max-w-3xl">
             <div className="text-center">
               <p className="mb-3 text-xl font-black uppercase tracking-[0.25em] text-orange-500 sm:text-2xl">Welcome</p>
-              <h2 className="mb-4 text-4xl font-black text-slate-900 sm:text-5xl">
+              <h1 className="mb-4 text-4xl font-black text-slate-900 sm:text-5xl">
                 A cheerful start to every school day.
-              </h2>
+              </h1>
               <p className="mx-auto max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
                 Freshly prepared nutritious lunches made with quality ingredients,
                 helping children enjoy healthy food every day.
@@ -154,27 +154,28 @@ export default function Home() {
         </svg>
       </div>
 
-      
-
       {/* ── Our Menus ── */}
       <section id="menus" className="scroll-mt-24 bg-gray-100 px-0 py-12 sm:px-6">
         <div className="mx-auto mb-6 max-w-7xl text-center">
+          <h2 className="sr-only">Autumn/Winter Menus</h2>
           <Image
             src="/images/Autumn-Winter-Menus.png"
             alt="Playground Pantry"
-            width={500}
-            height={500}
-            className="mx-auto w-screen max-w-[1100px] sm:w-full"
+            width={1600}
+            height={400}
+            className="mx-auto w-full max-w-[1100px] sm:w-full"
           />
-          {/* <h2 className="mb-3 text-4xl font-bold text-slate-900 sm:text-5xl">Our Menus</h2> */}
-          <p className="mx-auto mt-0 max-w-2xl px-4 text-base text-slate-600 sm:px-0 sm:text-lg">
-            Take a look at our delicious three-week menu rotation, crafted with care to provide balanced and
-            delicious meals for children.
+          <p className="mx-auto mt-2 max-w-3xl px-4 text-lg font-medium leading-relaxed text-slate-700 sm:px-0 sm:text-xl">
+            Explore our{" "}
+            <span className="font-extrabold text-amber-600">
+              delicious three-week menu rotation
+            </span>
+            , thoughtfully created to provide children with varied, nutritious and
+            balanced meals they&apos;ll love.
           </p>
         </div>
 
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 md:grid-cols-5">
-
           {/* mascot 1  */}
           <video
             src="/videos/video-project-8.mp4"
@@ -182,46 +183,30 @@ export default function Home() {
             loop
             muted
             playsInline
+            aria-hidden="true"
             className="h-auto w-60 object-contain my-auto mx-auto md:block md:w-72 lg:w-80"
           />
-
-          {/* <video
-            src="/videos/can-you-ma-Video-Anthro-Broccoli-Joyful-Running-Loop.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            aria-hidden="true"
-            className=" h-auto w-48 object-contain my-auto mx-auto md:block"
-          /> */}
 
           <MenuLightbox />
 
           {/* mascot 2  */}
-
-          <img
+          <Image
             src="/videos/apple-dancing-transparent.webp"
             alt="dancing apple mascot"
             aria-hidden="true"
+            width={640}
+            height={360}
+            unoptimized
+            loading="eager"
             className="h-auto w-60 object-contain my-auto mx-auto md:block md:w-72 lg:w-80"
           />
 
-          {/* <video
-            src="/videos/apple-dancing-video-v6.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            aria-hidden="true"
-            className=" h-auto w-90 object-contain my-auto mx-auto md:block"
-          /> */}
-
         </div>
-        <h2 className="mt-12 flex items-center justify-center gap-3 text-center text-2xl font-extrabold text-slate-800">
+        <aside className="mt-12 flex items-center justify-center gap-3 text-center text-2xl font-extrabold text-slate-800">
           <span aria-hidden="true">⭐</span>
           <span>All meals are also available as a gluten-free version</span>
           <span aria-hidden="true">⭐</span>
-        </h2>
+        </aside>
       </section>
 
       {/* meal rotation images */}
@@ -264,7 +249,7 @@ export default function Home() {
                   height={96}
                   className="h-24 w-24 rounded-full object-cover"
                 />
-                <h3 className="text-xl font-bold text-slate-900">Claire</ h3>
+                <h3 className="text-xl font-bold text-slate-900">Claire</h3>
               </div>
               <p className="mt-4 text-left text-lg text-slate-600">
                 Claire is the proud owner of Playground Pantry, bringing over 15 years of experience in school catering and a real passion for providing children with fresh, nutritious and delicious food. She believes healthy meals should be something children look forward to, creating balanced menus that keep young diners happy, fuelled and ready for the day ahead.
@@ -391,7 +376,7 @@ export default function Home() {
               <div className="rounded-2xl border-2 border-purple-200 bg-purple-50 p-5">
                 <h4 className="text-lg font-bold text-slate-900">Eligibility from 2026</h4>
                 <p className="mt-2 leading-relaxed text-slate-600">
-                  From the start of the 2026/27 academic year, every child in a household receiving Universal Credit will qualify for free school meals, regardless of household income. This change is part of the Children’s Wellbeing and Schools Act 2026.
+                  From the start of the 2026/27 academic year, every child in a household receiving Universal Credit will qualify for free school meals, regardless of household earnings. This change is part of the Children&apos;s Wellbeing and Schools Act 2026.
                 </p>
               </div>
 
