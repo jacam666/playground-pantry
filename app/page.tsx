@@ -160,7 +160,7 @@ export default function Home() {
           <h2 className="sr-only">Autumn/Winter Menus</h2>
           <div className="mx-auto w-full max-w-[1100px] overflow-hidden rounded-xl pb-2 sm:pb-3">
             <Image
-              src="/images/Autumn-Winter-Menus-advanced-(Desktop Wallpaper)-cropped.png"
+              src="/images/Autumn-Winter-Menus-advanced-(Desktop Wallpaper)-cropped.PNG"
               alt="Playground Pantry"
               width={1600}
               height={400}
@@ -168,7 +168,7 @@ export default function Home() {
               style={{ aspectRatio: "1600 / 360" }}
             />
           </div>
-          <p className="mx-auto mt-3 max-w-3xl px-4 text-lg font-medium leading-relaxed text-slate-700 sm:px-0 sm:text-xl">
+          <p className="mx-auto my-3 max-w-3xl px-4 text-lg font-medium leading-relaxed text-slate-700 sm:px-0 sm:text-xl">
             Explore our{" "}
             <span className="font-extrabold text-amber-600">
               delicious three-week menu rotation
