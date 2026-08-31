@@ -154,11 +154,20 @@ export default function Home() {
         </svg>
       </div>
 
+      
+
       {/* ── Our Menus ── */}
       <section id="menus" className="scroll-mt-24 bg-gray-100 px-6 py-12">
-        <div className="mx-auto mb-12 max-w-7xl text-center">
-          <h2 className="mb-4 text-4xl font-bold text-slate-900 sm:text-5xl">Our Menus</h2>
-          <p className="mx-auto max-w-2xl text-lg text-slate-600">
+        <div className="mx-auto mb-6 max-w-7xl text-center">
+          <Image
+            src="/images/Autumn-Winter-Menus.png"
+            alt="Playground Pantry"
+            width={500}
+            height={500}
+            className="mx-auto mb-2 w-full max-w-[920px]"
+          />
+          {/* <h2 className="mb-3 text-4xl font-bold text-slate-900 sm:text-5xl">Our Menus</h2> */}
+          <p className="mx-auto mt-0 max-w-2xl text-lg text-slate-600">
             Take a look at our delicious three-week menu rotation, crafted with care to provide balanced and
             delicious meals for children.
           </p>
