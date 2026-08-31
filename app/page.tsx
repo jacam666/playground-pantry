@@ -164,7 +164,7 @@ export default function Home() {
             alt="Playground Pantry"
             width={500}
             height={500}
-            className="mx-auto w-screen max-w-[920px] sm:w-full"
+            className="mx-auto w-screen max-w-[1100px] sm:w-full"
           />
           {/* <h2 className="mb-3 text-4xl font-bold text-slate-900 sm:text-5xl">Our Menus</h2> */}
           <p className="mx-auto mt-0 max-w-2xl px-4 text-base text-slate-600 sm:px-0 sm:text-lg">
