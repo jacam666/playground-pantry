@@ -158,14 +158,22 @@ export default function Home() {
       <section id="menus" className="scroll-mt-24 bg-gray-100 px-0 py-12 sm:px-6">
         <div className="mx-auto mb-4 max-w-7xl text-center">
           <h2 className="sr-only">Autumn/Winter Menus</h2>
-          <div className="mx-auto w-full max-w-[1100px] overflow-hidden rounded-xl pb-2 sm:pb-3">
-            <Image
+          <div className="mx-auto w-full  overflow-hidden rounded-xl pb-2 sm:pb-3">
+            {/* <Image
               src="/images/Autumn__Winter_Menus-removebg-preview-2.PNG"
               alt="Playground Pantry"
               width={1600}
               height={400}
               className="mx-auto block h-auto w-full mb-12 object-cover object-center"
               style={{ aspectRatio: "1600 / 400" }}
+            /> */}
+            <Image
+              src="/images/autumn-winter-menus-mascots-winter-clothes-removebg-preview.png"
+              alt="Playground Pantry"
+              width={1600}
+              height={400}
+              className="mx-auto  h-auto w-full mb-12 object-contain object-center"
+              style={{ aspectRatio: "100 / 50" }}
             />
           </div>
           <p className="mx-auto my-3 max-w-3xl px-4 text-lg font-medium leading-relaxed text-slate-700 sm:px-0 sm:text-xl">
