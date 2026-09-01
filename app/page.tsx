@@ -172,8 +172,8 @@ export default function Home() {
               alt="Playground Pantry"
               width={1600}
               height={400}
-              className="mx-auto  h-auto w-full mb-12 object-contain object-center"
-              style={{ aspectRatio: "100 / 50" }}
+              className="mx-auto block h-auto w-full mb-12 object-contain object-center"
+              // style={{ aspectRatio: "100 / 50" }}
             />
           </div>
           <p className="mx-auto my-3 max-w-3xl px-4 text-lg font-medium leading-relaxed text-slate-700 sm:px-0 sm:text-xl">
