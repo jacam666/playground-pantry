@@ -42,15 +42,15 @@ export default function Home() {
 
           <section className="w-full px-6 pb-6 pt-0">
             <div className="mx-auto max-w-4xl">
-              <div className="relative mx-auto w-full max-w-[620px] overflow-hidden rounded-[1.5rem]">
+              <div className="relative mx-auto w-full max-w-[310px] overflow-hidden rounded-[1.5rem]">
                 <video
                   ref={videoRef}
-                  src="/videos/playground-pantry-welcome-mascot-1x1-v2.mp4"
+                  src="/videos/Video-Project-10-v3.mp4"
                   autoPlay
                   muted={isMuted}
                   playsInline
                   onEnded={handleVideoEnded}
-                  className="block aspect-square w-full object-contain"
+                  className="block aspect-square w-full object-cover"
                 />
 
                 <button
