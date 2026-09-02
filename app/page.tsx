@@ -42,7 +42,7 @@ export default function Home() {
 
           <section className="w-full px-6 pb-6 pt-0">
             <div className="mx-auto max-w-4xl">
-              <div className="relative mx-auto w-full max-w-[480px] overflow-hidden rounded-[1.5rem]">
+              <div className="relative mx-auto w-full max-w-[480px] overflow-hidden rounded-[2rem] border-4 border-slate-900 bg-slate-900 shadow-[0_20px_60px_rgba(15,23,42,0.18)]">
                 <video
                   ref={videoRef}
                   src="/videos/Video-Project-16.mp4"
@@ -50,7 +50,7 @@ export default function Home() {
                   muted={isMuted}
                   playsInline
                   onEnded={handleVideoEnded}
-                  className="block aspect-square w-full object-cover"
+                  className="block aspect-square w-full rounded-[1.3rem] object-cover"
                 />
 
                 <button
@@ -173,7 +173,7 @@ export default function Home() {
               width={1600}
               height={400}
               className="mx-auto block h-auto w-full mb-12 object-contain object-center"
-              // style={{ aspectRatio: "100 / 50" }}
+            // style={{ aspectRatio: "100 / 50" }}
             />
           </div>
           <p className="mx-auto my-3 max-w-3xl px-4 text-lg font-medium leading-relaxed text-slate-700 sm:px-0 sm:text-xl">
@@ -218,6 +218,36 @@ export default function Home() {
           <span>All meals are also available as a gluten-free version</span>
           <span aria-hidden="true">⭐</span>
         </aside>
+
+
+        {/* Window display section */}
+        <div className="mx-auto mt-12 grid max-w-7xl grid-cols-2 gap-10 px-6">
+          <div className="overflow-hidden rounded-[2rem] border-4 border-slate-900 bg-slate-900 shadow-[0_20px_50px_rgba(15,23,42,0.15)]">
+            <video
+              src="/videos/mascot-menu-window-display.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              aria-hidden="true"
+              className="block h-auto w-full rounded-[1.35rem] object-cover"
+            />
+          </div>
+
+          <div className="overflow-hidden rounded-[2rem] border-4 border-slate-900 bg-slate-900 shadow-[0_20px_50px_rgba(15,23,42,0.15)]">
+            <video
+              src="/videos/kitchen-mascot-video.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              aria-hidden="true"
+              className="block h-auto w-full rounded-[1.35rem] object-cover"
+            />
+          </div>
+        </div>
+        <h1 className="mt-12 text-center text-3xl font-bold text-slate-900">Menu&apos;s can also be found on the Kitchen Windows as you walk into school.</h1>
+
       </section>
 
       {/* meal rotation images */}
