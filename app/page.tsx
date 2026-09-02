@@ -42,10 +42,10 @@ export default function Home() {
 
           <section className="w-full px-6 pb-6 pt-0">
             <div className="mx-auto max-w-4xl">
-              <div className="relative mx-auto w-full max-w-[310px] overflow-hidden rounded-[1.5rem]">
+              <div className="relative mx-auto w-full max-w-[480px] overflow-hidden rounded-[1.5rem]">
                 <video
                   ref={videoRef}
-                  src="/videos/Video-Project-10-v3.mp4"
+                  src="/videos/Video-Project-16.mp4"
                   autoPlay
                   muted={isMuted}
                   playsInline
