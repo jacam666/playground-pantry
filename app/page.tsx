@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import MenuLightbox from "./components/MenuLightbox";
 import ContactForm from "./components/ContactForm";
 import ImageCarousel from "./components/ImageCarousel";
@@ -10,10 +10,22 @@ import Navbar from "./components/Navbar";
 
 export default function Home() {
   const [isMuted, setIsMuted] = useState(true);
-  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const logoVideoRef = useRef<HTMLVideoElement | null>(null);
+  const heroVideoRef = useRef<HTMLVideoElement | null>(null);
 
-  const handleVideoEnded = () => {
-    const video = videoRef.current;
+  useEffect(() => {
+    if (heroVideoRef.current) {
+      heroVideoRef.current.muted = isMuted;
+      heroVideoRef.current.volume = isMuted ? 0 : 1;
+    }
+
+    if (logoVideoRef.current) {
+      logoVideoRef.current.muted = true;
+      logoVideoRef.current.volume = 0;
+    }
+  }, [isMuted]);
+
+  const handleVideoEnded = (video: HTMLVideoElement | null) => {
     if (!video) return;
 
     video.pause();
@@ -33,13 +45,13 @@ export default function Home() {
       <section className="bg-gray-50 px-6 py-12">
         <div className="mx-auto flex max-w-7xl flex-col items-center text-center">
           <video
-            ref={videoRef}
+            ref={logoVideoRef}
             src="/videos/logo-animation.mp4"
             autoPlay
-            muted={isMuted}
+            muted
             playsInline
             loop
-            onEnded={handleVideoEnded}
+            onEnded={() => handleVideoEnded(logoVideoRef.current)}
             className="block aspect-square w-1/2 sm:w-1/3 rounded-[1.3rem] object-cover mb-8"
           />
           {/* <Image
@@ -54,12 +66,12 @@ export default function Home() {
             <div className="mx-auto max-w-4xl">
               <div className="relative mx-auto w-full max-w-[480px] overflow-hidden rounded-[2rem] border-4 border-slate-900 bg-slate-900 shadow-[0_20px_60px_rgba(15,23,42,0.18)]">
                 <video
-                  ref={videoRef}
+                  ref={heroVideoRef}
                   src="/videos/Video-Project-16.mp4"
                   autoPlay
                   muted={isMuted}
                   playsInline
-                  onEnded={handleVideoEnded}
+                  onEnded={() => handleVideoEnded(heroVideoRef.current)}
                   className="block aspect-square w-full rounded-[1.3rem] object-cover"
                 />
 
