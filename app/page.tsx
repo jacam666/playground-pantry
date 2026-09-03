@@ -74,17 +74,6 @@ export default function Home() {
               </div>
             </div>
           </section>
-
-          {/* <h1 className="mb-6 text-5xl font-bold text-slate-900">
-            Healthy School Meals,
-            <br />
-            Happy Children.
-          </h1>
-
-          <p className="max-w-2xl text-lg text-slate-600">
-            Freshly prepared nutritious lunches made with quality ingredients,
-            helping children enjoy healthy food every day.
-          </p> */}
           <div className="mx-auto max-w-3xl">
             <div className="text-center">
               <p className="mb-3 text-xl font-black uppercase tracking-[0.25em] text-orange-500 sm:text-2xl">Welcome</p>
@@ -101,25 +90,19 @@ export default function Home() {
           {/* fruit CTA buttons */}
           <div className="mt-10 flex flex-row items-center justify-center gap-8 sm:gap-16">
             <Link href="#menus" className="group flex flex-col items-center gap-3">
-              <div className="rounded-3xl bg-pink-100 p-5 shadow-lg transition duration-300 group-hover:-rotate-6 group-hover:scale-110 group-hover:shadow-2xl">
+              <div className="rounded-3xl">
                 <Image
-                  src="/images/strawberry.png"
+                  src="/images/strawberry-see-our-menus-button.png"
                   alt="See our menus"
-                  width={96}
-                  height={96}
-                  className="h-24 w-24 object-contain"
+                  width={1672}
+                  height={941}
+                  sizes="(max-width: 640px) 220px, (max-width: 1024px) 260px, 300px"
+                  quality={100}
+                  className="h-auto w-[220px] object-contain sm:w-[260px] lg:w-[300px]"
                 />
               </div>
-              <span className="text-base font-black text-slate-700 tracking-wide">SEE OUR MENUS 🍽️</span>
+              {/* <span className="text-base font-black text-slate-700 tracking-wide">SEE OUR MENUS 🍽️</span> */}
             </Link>
-
-            {/* <Image
-              src="/images/mascot-carrot-waving.png"
-              alt="mascot-3"
-              width={200}
-              height={200}
-              className="hidden h-auto w-36 object-contain my-auto mx-auto md:block"
-            /> */}
 
             <Image
               src="/videos/dancing-carrot-transparent.webp"
@@ -132,27 +115,19 @@ export default function Home() {
               className="hidden h-auto w-90 object-contain my-auto mx-auto md:block"
             />
 
-            {/* <video
-              src="/videos/dancing-carrot-v1.webm"
-              autoPlay
-              loop
-              muted
-              playsInline
-              aria-hidden="true"
-              className="hidden h-auto w-90 max-w-24 object-contain my-auto mx-auto md:block"
-            /> */}
-
             <Link href="#contact" className="group flex flex-col items-center gap-3">
-              <div className="rounded-3xl bg-orange-100 p-5 shadow-lg transition duration-300 group-hover:-rotate-6 group-hover:scale-110 group-hover:shadow-2xl">
+              <div className="rounded-3xl">
                 <Image
-                  src="/images/carrot.png"
+                  src="/images/broccoli-get-in-touch-button-mirrored.png"
                   alt="Get in touch"
-                  width={96}
-                  height={96}
-                  className="h-24 w-24 object-contain"
+                  width={1672}
+                  height={941}
+                  sizes="(max-width: 640px) 220px, (max-width: 1024px) 260px, 300px"
+                  quality={100}
+                  className="h-auto w-[220px] object-contain sm:w-[260px] lg:w-[300px]"
                 />
               </div>
-              <span className="text-base font-black text-slate-700 tracking-wide">GET IN TOUCH 👋</span>
+              {/* <span className="text-base font-black text-slate-700 tracking-wide">GET IN TOUCH 👋</span> */}
             </Link>
           </div>
         </div>
