@@ -22,7 +22,7 @@ export default function Navbar() {
         {/* logo */}
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <Image
-            src="/images/Playground-Pantry-logo-removebg-preview (1).png"
+            src="/images/3d-logo-image-removebg-preview.png"
             alt="Playground Pantry home"
             width={90}
             height={36}

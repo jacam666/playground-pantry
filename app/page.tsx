@@ -32,13 +32,23 @@ export default function Home() {
       {/* ── Hero ── */}
       <section className="bg-gray-50 px-6 py-12">
         <div className="mx-auto flex max-w-7xl flex-col items-center text-center">
-          <Image
+          <video
+            ref={videoRef}
+            src="/videos/logo-animation.mp4"
+            autoPlay
+            muted={isMuted}
+            playsInline
+            loop
+            onEnded={handleVideoEnded}
+            className="block aspect-square w-1/2 sm:w-1/3 rounded-[1.3rem] object-cover mb-8"
+          />
+          {/* <Image
             src="/images/Playground-Pantry-logo.png"
             alt="Playground Pantry"
             width={500}
             height={500}
             className="mb-8 h-auto w-48 rounded-full shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-2xl sm:w-64"
-          />
+          /> */}
 
           <section className="w-full px-6 pb-6 pt-0">
             <div className="mx-auto max-w-4xl">
@@ -515,7 +525,7 @@ export default function Home() {
       {/* ── Footer ── */}
       <footer className="bg-green-400 px-6 py-10 text-center text-white">
         <Image
-          src="/images/Playground-Pantry-logo.png"
+          src="/images/3d-logo-image.jpeg"
           alt="Playground Pantry"
           width={80}
           height={80}
