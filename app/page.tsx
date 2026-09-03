@@ -67,7 +67,7 @@ export default function Home() {
               <div className="relative mx-auto w-full max-w-[480px] overflow-hidden rounded-[2rem] border-4 border-slate-900 bg-slate-900 shadow-[0_20px_60px_rgba(15,23,42,0.18)]">
                 <video
                   ref={heroVideoRef}
-                  src="/videos/Video-Project-16.mp4"
+                  src="/videos/Video-Project-17-v2.mp4"
                   autoPlay
                   muted={isMuted}
                   playsInline
@@ -169,6 +169,7 @@ export default function Home() {
               alt="Playground Pantry"
               width={1600}
               height={400}
+              loading="eager"
               className="mx-auto block h-auto w-full mb-12 object-contain object-center"
             // style={{ aspectRatio: "100 / 50" }}
             />
@@ -243,7 +244,7 @@ export default function Home() {
             />
           </div>
         </div>
-        <h1 className="mt-12 text-center text-3xl font-bold text-slate-900">Menu&apos;s can also be found on the Kitchen Windows as you walk into school.</h1>
+        <h1 className="mt-12 text-center text-3xl font-bold text-slate-900 px-6">Menu&apos;s can also be found on the Kitchen Windows as you walk into school.</h1>
 
       </section>
 
