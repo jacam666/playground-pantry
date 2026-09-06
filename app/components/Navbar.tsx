@@ -7,6 +7,7 @@ import { useState } from "react";
 const links = [
   { href: "#menus", label: "🍓 Menus" },
   { href: "#meal-calendars", label: "📅 Meal Calendars" },
+  { href: "/meal-gallery", label: "📖 Recipe Book" },
   { href: "#who-we-are", label: "👨‍🍳 Who We Are" },
   { href: "#payments", label: "💳 Payments" },
   { href: "#contact", label: "👋 Contact", highlight: true },
