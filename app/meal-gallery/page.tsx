@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import styles from "./meal-gallery.module.css";
 
 type Meal = { title: string; description: string; image?: string; accent: string; ingredients: string[] };
@@ -58,37 +58,48 @@ export default function MealGalleryPage() {
   const [page, setPage] = useState(0);
   const [cardFlipped, setCardFlipped] = useState(false);
   const [direction, setDirection] = useState<"next" | "previous">("next");
+  const [isTurning, setIsTurning] = useState(false);
+  const turnTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const totalPages = bookPages.length + 2;
   const currentBookPage = page > 0 && page < totalPages - 1 ? bookPages[page - 1] : null;
   const meal = currentBookPage?.kind === "meal" ? currentBookPage.meal : null;
+  const mealPageNumber = meal
+    ? bookPages.slice(0, page).filter((bookPage) => bookPage.kind === "meal").length
+    : null;
+  const totalMealPages = meals.length + vegetarianMeals.length;
 
-  const goToPage = (nextPage: number) => {
-    if (nextPage < 0 || nextPage >= totalPages || nextPage === page) return;
-    setDirection(nextPage > page ? "next" : "previous");
+  const goToPage = useCallback((nextPage: number) => {
+    if (nextPage < 0 || nextPage >= totalPages || nextPage === page || isTurning) return;
+    const nextDirection = nextPage > page ? "next" : "previous";
+    setDirection(nextDirection);
     setCardFlipped(false);
-    setPage(nextPage);
-  };
+    setIsTurning(true);
+
+    if (nextDirection === "next") setPage(nextPage);
+
+    turnTimer.current = setTimeout(() => {
+      if (nextDirection === "previous") setPage(nextPage);
+      setIsTurning(false);
+      turnTimer.current = null;
+    }, 820);
+  }, [isTurning, page, totalPages]);
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "ArrowRight" && page < totalPages - 1) {
-        setDirection("next");
-        setCardFlipped(false);
-        setPage((value) => value + 1);
-      }
-      if (event.key === "ArrowLeft" && page > 0) {
-        setDirection("previous");
-        setCardFlipped(false);
-        setPage((value) => value - 1);
-      }
-      if ((event.key === "Enter" || event.key === " ") && currentBookPage?.kind === "meal") {
+      if (event.key === "ArrowRight") goToPage(page + 1);
+      if (event.key === "ArrowLeft") goToPage(page - 1);
+      if ((event.key === "Enter" || event.key === " ") && currentBookPage?.kind === "meal" && !isTurning) {
         event.preventDefault();
         setCardFlipped((value) => !value);
       }
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [currentBookPage, page, totalPages]);
+  }, [currentBookPage, goToPage, isTurning, page]);
+
+  useEffect(() => () => {
+    if (turnTimer.current) clearTimeout(turnTimer.current);
+  }, []);
 
   return (
     <main className={`${styles.galleryShell} min-h-screen overflow-hidden text-[#26352d]`}>
@@ -114,7 +125,7 @@ export default function MealGalleryPage() {
 
       <section className={`${styles.bookArea} relative mx-auto max-w-[840px] px-4 pb-16 sm:px-6`} aria-label="Claire's meal book">
         <div className={styles.bookShadow} aria-hidden="true" />
-        <article className={`${styles.book} ${direction === "next" ? styles.turnNext : styles.turnPrevious}`} key={page}>
+        <article className={`${styles.book} ${isTurning ? direction === "next" ? styles.turnNext : styles.turnPrevious : ""}`} key={page}>
           <div className={styles.pageEdges} aria-hidden="true" />
           {page === 0 && (
             <div className={`${styles.cover} ${styles.ancientCover} ${styles.frontCover} absolute inset-0 flex flex-col items-center overflow-hidden p-[clamp(28px,7vw,64px)] text-center`}>
@@ -142,7 +153,6 @@ export default function MealGalleryPage() {
               <span className="my-6 h-1.5 w-20 rounded-full" style={{ backgroundColor: currentBookPage.accent }} />
               <p className="max-w-md text-[clamp(1rem,2.6vw,1.3rem)] font-semibold leading-relaxed text-[#65736b]">{currentBookPage.subtitle}</p>
               <p className="mt-8 text-sm font-black uppercase tracking-wider text-[#2f754b]">Turn the page to begin <span aria-hidden="true">→</span></p>
-              <span className="absolute bottom-3 right-6 font-serif text-[.8rem] text-[#8a806b]">{page}</span>
             </div>
           )}
 
@@ -174,7 +184,7 @@ export default function MealGalleryPage() {
                   </span>
                 </span>
               </button>
-              <span className="absolute bottom-3 right-6 font-serif text-[.8rem] text-[#8a806b]">{page}</span>
+              <span className="absolute bottom-3 right-6 font-serif text-[.8rem] text-[#8a806b]">{mealPageNumber}</span>
             </div>
           )}
 
@@ -185,7 +195,7 @@ export default function MealGalleryPage() {
               <div className="relative z-10 flex flex-col items-center">
                 <p className="text-[clamp(.58rem,1.5vw,.78rem)] font-bold uppercase tracking-[.28em] text-[#c8a85c]">The end</p>
                 <h2 className="mt-5 font-serif text-[clamp(2.5rem,8vw,5rem)] font-extrabold leading-none text-[#d8b866] drop-shadow-[0_3px_1px_#241507]">That&apos;s all<br />for now!</h2>
-                <div className={`${styles.ancientRule} my-10`} aria-hidden="true"><span>◆</span></div>
+                {/* <div className={`${styles.ancientRule} my-[4.5rem]`} aria-hidden="true"><span>◆</span></div> */}
                 <p className="max-w-[380px] font-serif text-[clamp(.95rem,2.3vw,1.15rem)] italic leading-relaxed text-[#c8b889]">Come back soon to see what Claire has been cooking.</p>
               </div>
               <button type="button" className={styles.openBook} onClick={() => goToPage(0)}>Back to the cover</button>
@@ -194,11 +204,17 @@ export default function MealGalleryPage() {
         </article>
 
         <div className="relative z-10 mx-auto mt-[38px] grid grid-cols-[1fr_auto_1fr] items-center gap-2 sm:gap-[18px]">
-          <button type="button" className="justify-self-start rounded-full border-2 border-[#2d6d47] bg-white px-3 py-2.5 text-xs font-black text-[#285b3e] shadow-[0_4px_0_#b8cfbd] transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-35 sm:px-[17px] sm:text-base" onClick={() => goToPage(page - 1)} disabled={page === 0}><span aria-hidden="true">←</span> Previous</button>
+          <button type="button" className="justify-self-start rounded-full border-2 border-[#2d6d47] bg-white px-3 py-2.5 text-xs font-black text-[#285b3e] shadow-[0_4px_0_#b8cfbd] transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-35 sm:px-[17px] sm:text-base" onClick={() => goToPage(page - 1)} disabled={page === 0 || isTurning}><span aria-hidden="true">←</span> Previous</button>
           <div className="min-w-[78px] text-center text-xs font-black text-[#52635a] sm:text-sm" aria-live="polite">
-            {page === 0 ? "Cover" : page === totalPages - 1 ? "Back cover" : `Page ${page} of ${totalPages - 2}`}
+            {page === 0
+              ? "Cover"
+              : page === totalPages - 1
+                ? "Back cover"
+                : currentBookPage?.kind === "section"
+                  ? "Chapter page"
+                  : `Page ${mealPageNumber} of ${totalMealPages}`}
           </div>
-          <button type="button" className="justify-self-end rounded-full border-2 border-[#2d6d47] bg-white px-3 py-2.5 text-xs font-black text-[#285b3e] shadow-[0_4px_0_#b8cfbd] transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-35 sm:px-[17px] sm:text-base" onClick={() => goToPage(page + 1)} disabled={page === totalPages - 1}>Next <span aria-hidden="true">→</span></button>
+          <button type="button" className="justify-self-end rounded-full border-2 border-[#2d6d47] bg-white px-3 py-2.5 text-xs font-black text-[#285b3e] shadow-[0_4px_0_#b8cfbd] transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-35 sm:px-[17px] sm:text-base" onClick={() => goToPage(page + 1)} disabled={page === totalPages - 1 || isTurning}>Next <span aria-hidden="true">→</span></button>
         </div>
         <p className="relative mt-3.5 hidden text-center text-[.78rem] font-bold text-[#728078] sm:block">Tip: use the arrow keys to turn pages</p>
       </section>
