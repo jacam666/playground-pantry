@@ -6,20 +6,61 @@ import { useEffect, useState } from "react";
 import styles from "./meal-gallery.module.css";
 
 type Meal = { title: string; description: string; image?: string; accent: string; ingredients: string[] };
+type BookPage =
+  | { kind: "section"; title: string; subtitle: string; icon: string; accent: string }
+  | { kind: "meal"; meal: Meal };
 
 // Add Claire's photos to public/images/meals, then add each image path here.
 const meals: Meal[] = [
-  { title: "Cosy Tomato Pasta", description: "A warm, colourful lunchtime favourite.", accent: "#ff6b35", ingredients: ["Pasta", "Tomatoes", "Carrots", "Onion", "Garlic", "Mixed herbs", "Cheddar cheese"] },
-  { title: "Rainbow Veggie Curry", description: "Mild, creamy and packed with vegetables.", accent: "#ffb703", ingredients: ["Sweet potato", "Chickpeas", "Peppers", "Peas", "Coconut milk", "Tomatoes", "Mild curry spices"] },
-  { title: "Claire's Cottage Pie", description: "A hearty classic with a fluffy potato top.", accent: "#6fbd44", ingredients: ["Lean minced beef", "Potatoes", "Carrots", "Peas", "Onion", "Tomato purée", "Vegetable stock"] },
-  { title: "Sunshine Mac & Cheese", description: "Creamy, comforting and made for happy lunchtimes.", accent: "#e83e8c", ingredients: ["Macaroni", "Cheddar cheese", "Milk", "Cauliflower", "Butternut squash", "Flour", "Butter"] },
+  { title: "Salmon En Croute with New Potatoes", description: "Week 1 • Monday", accent: "#65a30d", ingredients: [] },
+  { title: "Jerk Chicken with Rice", description: "Week 1 • Tuesday", accent: "#0891b2", ingredients: [] },
+  { title: "Sausage, Mash, Gravy and Yorkshire Pudding", description: "Week 1 • Wednesday", accent: "#ef4444", ingredients: [] },
+  { title: "Spaghetti Bolognese", description: "Week 1 • Thursday", accent: "#f59e0b", ingredients: [] },
+  { title: "Breaded Fish with Potato Waffles", description: "Week 1 • Friday", accent: "#9333ea", ingredients: [] },
+  { title: "Southern Baked Chicken with Sweet Potato Wedges", description: "Week 2 • Monday", accent: "#65a30d", ingredients: [] },
+  { title: "Salmon Fish Cake with Cous Cous Salad", description: "Week 2 • Tuesday", accent: "#0891b2", ingredients: [] },
+  { title: "Individual Chicken and Leek Pie with Roast Potatoes", description: "Week 2 • Wednesday", accent: "#ef4444", ingredients: [] },
+  { title: "Beef Burrito", description: "Week 2 • Thursday", accent: "#f59e0b", ingredients: [] },
+  { title: "Breaded Fish and Potato Waffle", description: "Week 2 • Friday", accent: "#9333ea", ingredients: [] },
+  { title: "Chicken Pasta Salad", description: "Week 3 • Monday", accent: "#65a30d", ingredients: [] },
+  { title: "Pepperoni Roll-Ups with Smashed Potatoes", description: "Week 3 • Tuesday", accent: "#0891b2", ingredients: [] },
+  { title: "BBQ Chicken Drumstick with Baked Potato Skins", description: "Week 3 • Wednesday", accent: "#ef4444", ingredients: [] },
+  { title: "Lasagne and Garlic Bread", description: "Week 3 • Thursday", accent: "#f59e0b", ingredients: [] },
+  { title: "Breaded Fish and Potato Waffle", description: "Week 3 • Friday", accent: "#9333ea", ingredients: [] },
+];
+
+const vegetarianMeals: Meal[] = [
+  { title: "Creamy Vegetable Pie", description: "Week 1 • Monday", accent: "#65a30d", ingredients: [] },
+  { title: "Sweet Potato Curry", description: "Week 1 • Tuesday", accent: "#0891b2", ingredients: [] },
+  { title: "Roasted Veg and Tomato Pasta Bake", description: "Week 1 • Wednesday", accent: "#ef4444", ingredients: [] },
+  { title: "Sweetcorn Fritter", description: "Week 1 • Thursday", accent: "#f59e0b", ingredients: [] },
+  { title: "Margherita Pizza", description: "Week 1 • Friday", accent: "#9333ea", ingredients: [] },
+  { title: "Cheesy Vegetable Bake", description: "Week 2 • Monday", accent: "#65a30d", ingredients: [] },
+  { title: "Mini Crustless Quiche", description: "Week 2 • Tuesday", accent: "#0891b2", ingredients: [] },
+  { title: "Cheese and Bean Pasty", description: "Week 2 • Wednesday", accent: "#ef4444", ingredients: [] },
+  { title: "Thai Green Curry with Brown Rice", description: "Week 2 • Thursday", accent: "#f59e0b", ingredients: [] },
+  { title: "Margherita Pizza", description: "Week 2 • Friday", accent: "#9333ea", ingredients: [] },
+  { title: "Pizza Bagels with Oven Baked Wedges", description: "Week 3 • Monday", accent: "#65a30d", ingredients: [] },
+  { title: "Cheese and Onion Slice", description: "Week 3 • Tuesday", accent: "#0891b2", ingredients: [] },
+  { title: "Veggie Burgers", description: "Week 3 • Wednesday", accent: "#ef4444", ingredients: [] },
+  { title: "3 Bean Chilli with Rainbow Rice", description: "Week 3 • Thursday", accent: "#f59e0b", ingredients: [] },
+  { title: "Margherita Pizza", description: "Week 3 • Friday", accent: "#9333ea", ingredients: [] },
+];
+
+const bookPages: BookPage[] = [
+  { kind: "section", title: "Main Meals", subtitle: "Three weeks of hearty lunchtime favourites", icon: "🍽️", accent: "#ef5b2a" },
+  ...meals.map((meal): BookPage => ({ kind: "meal", meal })),
+  { kind: "section", title: "Vegetarian Meals", subtitle: "Colourful, tasty meat-free choices", icon: "🌱", accent: "#65a30d" },
+  ...vegetarianMeals.map((meal): BookPage => ({ kind: "meal", meal })),
 ];
 
 export default function MealGalleryPage() {
   const [page, setPage] = useState(0);
   const [cardFlipped, setCardFlipped] = useState(false);
   const [direction, setDirection] = useState<"next" | "previous">("next");
-  const totalPages = meals.length + 2;
+  const totalPages = bookPages.length + 2;
+  const currentBookPage = page > 0 && page < totalPages - 1 ? bookPages[page - 1] : null;
+  const meal = currentBookPage?.kind === "meal" ? currentBookPage.meal : null;
 
   const goToPage = (nextPage: number) => {
     if (nextPage < 0 || nextPage >= totalPages || nextPage === page) return;
@@ -40,16 +81,14 @@ export default function MealGalleryPage() {
         setCardFlipped(false);
         setPage((value) => value - 1);
       }
-      if ((event.key === "Enter" || event.key === " ") && page > 0 && page < totalPages - 1) {
+      if ((event.key === "Enter" || event.key === " ") && currentBookPage?.kind === "meal") {
         event.preventDefault();
         setCardFlipped((value) => !value);
       }
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [page, totalPages]);
-
-  const meal = page > 0 && page < totalPages - 1 ? meals[page - 1] : null;
+  }, [currentBookPage, page, totalPages]);
 
   return (
     <main className={`${styles.galleryShell} min-h-screen overflow-hidden text-[#26352d]`}>
@@ -78,19 +117,32 @@ export default function MealGalleryPage() {
         <article className={`${styles.book} ${direction === "next" ? styles.turnNext : styles.turnPrevious}`} key={page}>
           <div className={styles.pageEdges} aria-hidden="true" />
           {page === 0 && (
-            <div className={`${styles.cover}  absolute inset-0 flex flex-col items-center overflow-hidden border-[6px] border-l-[12px] border-[#174e35] p-[clamp(26px,6vw,54px)] text-center text-white sm:border-l-[18px]`}>
-              <span className="text-[clamp(.62rem,1.6vw,.82rem)] font-black uppercase tracking-[.18em]">Playground Pantry presents</span>
-              <div className="mt-[5%] flex flex-col font-serif leading-[.92]"><span className="text-[clamp(1.7rem,5vw,3rem)] italic">Claire&apos;s</span><strong className="text-[clamp(3.2rem,10vw,6.4rem)] text-[#ffe66d]">Recipe Book</strong></div>
-              <div className="my-3 h-1 w-[70px] rounded-full bg-[#ff8a4c] mt-5" />
-              <p className="font-bold">Freshly prepared • colourful • made with care</p>
-              <Image
-                src="/images/claire-mascots.png"
-                alt="Playground Pantry fruit and vegetable characters"
-                width={650}
-                height={340}
-                className="mt-auto h-auto w-[min(74%,460px)] object-contain max-sm:-mb-[3%] rounded-lg" priority
-              />
-              <button type="button" className={styles.openBook} onClick={() => goToPage(1)}>Open the book <span aria-hidden="true">→</span></button>
+            <div className={`${styles.cover} ${styles.ancientCover} ${styles.frontCover} absolute inset-0 flex flex-col items-center overflow-hidden p-[clamp(28px,7vw,64px)] text-center`}>
+              <span className={styles.dust} aria-hidden="true" />
+              <span className="relative z-10 text-[clamp(.58rem,1.5vw,.78rem)] font-bold uppercase tracking-[.28em] text-[#c8a85c]">Playground Pantry</span>
+              <div className={`${styles.ancientOrnament} relative z-10 mt-[7%]`} aria-hidden="true">✦</div>
+              <div className="relative z-10 mt-[6%] flex flex-col font-serif leading-[.88] text-[#d8b866] drop-shadow-[0_3px_1px_#241507]">
+                <span className="text-[clamp(1.6rem,4vw,2.6rem)] italic">Claire&apos;s</span>
+                {/* <strong className="mt-3 text-[clamp(2.8rem,8vw,5.4rem)] uppercase tracking-[-.04em]">Legendary</strong> */}
+                <strong className="mt-2 text-[clamp(2.3rem,7vw,4.6rem)] uppercase tracking-[.04em]">Recipe Book</strong>
+              </div>
+              <div className={`${styles.ancientRule} relative z-10 my-7`} aria-hidden="true"><span>◆</span></div>
+              <p className="relative z-10 max-w-sm font-serif text-[clamp(.9rem,2.3vw,1.15rem)] italic tracking-wide text-[#c8b889]">A treasured collection of nourishing feasts, gathered from Claire&apos;s kitchen</p>
+              <div className={`${styles.ancientSeal} relative z-10 mt-auto`} aria-hidden="true"><span>PP</span></div>
+              <button type="button" className={`${styles.openBook} relative z-20 mt-auto`} onClick={() => goToPage(1)}>Open the ancient book <span aria-hidden="true">→</span></button>
+            </div>
+          )}
+
+          {currentBookPage?.kind === "section" && (
+            <div className={`${styles.paperPage} absolute inset-0 flex flex-col items-center justify-center overflow-hidden border border-[#ded5bd] p-[clamp(28px,7vw,70px)] text-center`}>
+              <div className={styles.binding} aria-hidden="true" />
+              <span className="text-[clamp(4rem,15vw,8rem)] drop-shadow-md" aria-hidden="true">{currentBookPage.icon}</span>
+              <p className="mt-6 text-xs font-black uppercase tracking-[.22em]" style={{ color: currentBookPage.accent }}>Claire&apos;s recipe book</p>
+              <h2 className="mt-3 font-serif text-[clamp(2.8rem,9vw,6rem)] font-extrabold leading-[.95] text-[#203c2b]">{currentBookPage.title}</h2>
+              <span className="my-6 h-1.5 w-20 rounded-full" style={{ backgroundColor: currentBookPage.accent }} />
+              <p className="max-w-md text-[clamp(1rem,2.6vw,1.3rem)] font-semibold leading-relaxed text-[#65736b]">{currentBookPage.subtitle}</p>
+              <p className="mt-8 text-sm font-black uppercase tracking-wider text-[#2f754b]">Turn the page to begin <span aria-hidden="true">→</span></p>
+              <span className="absolute bottom-3 right-6 font-serif text-[.8rem] text-[#8a806b]">{page}</span>
             </div>
           )}
 
@@ -113,7 +165,11 @@ export default function MealGalleryPage() {
                     <span className="text-[.72rem] font-black uppercase tracking-[.17em] text-[#e6522d]">What&apos;s inside?</span>
                     <strong className="mt-2 font-serif text-[clamp(1.5rem,4.5vw,2.65rem)] leading-[1.05] text-[#203c2b]">{meal.title}</strong>
                     <span className="my-[18px] h-1 w-16 rounded-full" style={{ backgroundColor: meal.accent }} />
-                    <ul className="grid w-[min(100%,390px)] grid-cols-2 gap-2.5 text-left text-[#52635a]">{meal.ingredients.map((ingredient) => <li className="relative pl-[17px] text-[clamp(.82rem,2.2vw,1rem)] font-bold before:absolute before:left-0 before:text-[#68a34d] before:content-['●']" key={ingredient}>{ingredient}</li>)}</ul>
+                    {meal.ingredients.length > 0 ? (
+                      <ul className="grid w-[min(100%,390px)] grid-cols-2 gap-2.5 text-left text-[#52635a]">{meal.ingredients.map((ingredient) => <li className="relative pl-[17px] text-[clamp(.82rem,2.2vw,1rem)] font-bold before:absolute before:left-0 before:text-[#68a34d] before:content-['●']" key={ingredient}>{ingredient}</li>)}</ul>
+                    ) : (
+                      <span className="rounded-2xl bg-green-50 px-6 py-5 font-bold text-[#52635a]">Claire&apos;s ingredient list is coming soon.</span>
+                    )}
                     <span className="mt-auto text-xs font-black uppercase tracking-[.06em] text-[#2f754b]">Tap to see the meal <span aria-hidden="true">↻</span></span>
                   </span>
                 </span>
@@ -123,10 +179,15 @@ export default function MealGalleryPage() {
           )}
 
           {page === totalPages - 1 && (
-            <div className={`${styles.cover} absolute inset-0 flex flex-col items-center justify-center gap-3 overflow-hidden border-[6px] border-l-[12px] border-[#96365a] bg-[#ef5e93] p-[clamp(26px,6vw,54px)] text-center text-white sm:border-l-[18px]`}>
-              <Image src="/images/mascot-carrot-waving.png" alt="A waving carrot character" width={210} height={240} className="h-auto w-[min(42%,210px)] object-contain" />
-              <h2 className="font-serif text-[clamp(2rem,7vw,4rem)] font-extrabold">That&apos;s all for now!</h2>
-              <p className="max-w-[380px] font-bold">Come back soon to see what Claire has been cooking.</p>
+            <div className={`${styles.cover} ${styles.ancientCover} ${styles.ancientBackCover} absolute inset-0 flex flex-col items-center justify-center overflow-hidden p-[clamp(28px,7vw,64px)] text-center`}>
+              <span className={styles.dust} aria-hidden="true" />
+              <div className={`${styles.ancientOrnament} relative z-10 mb-10`} aria-hidden="true">✦</div>
+              <div className="relative z-10 flex flex-col items-center">
+                <p className="text-[clamp(.58rem,1.5vw,.78rem)] font-bold uppercase tracking-[.28em] text-[#c8a85c]">The end</p>
+                <h2 className="mt-5 font-serif text-[clamp(2.5rem,8vw,5rem)] font-extrabold leading-none text-[#d8b866] drop-shadow-[0_3px_1px_#241507]">That&apos;s all<br />for now!</h2>
+                <div className={`${styles.ancientRule} my-10`} aria-hidden="true"><span>◆</span></div>
+                <p className="max-w-[380px] font-serif text-[clamp(.95rem,2.3vw,1.15rem)] italic leading-relaxed text-[#c8b889]">Come back soon to see what Claire has been cooking.</p>
+              </div>
               <button type="button" className={styles.openBook} onClick={() => goToPage(0)}>Back to the cover</button>
             </div>
           )}
@@ -134,10 +195,8 @@ export default function MealGalleryPage() {
 
         <div className="relative z-10 mx-auto mt-[38px] grid grid-cols-[1fr_auto_1fr] items-center gap-2 sm:gap-[18px]">
           <button type="button" className="justify-self-start rounded-full border-2 border-[#2d6d47] bg-white px-3 py-2.5 text-xs font-black text-[#285b3e] shadow-[0_4px_0_#b8cfbd] transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-35 sm:px-[17px] sm:text-base" onClick={() => goToPage(page - 1)} disabled={page === 0}><span aria-hidden="true">←</span> Previous</button>
-          <div className="flex gap-[5px] sm:gap-2" aria-live="polite">
-            {Array.from({ length: totalPages }, (_, index) => (
-              <button type="button" key={index} onClick={() => goToPage(index)} className={`h-[7px] rounded-full transition-all sm:h-2.5 ${index === page ? "w-[18px] bg-[#ef5b2a] sm:w-[27px]" : "w-[7px] bg-[#b9c8bd] sm:w-2.5"}`} aria-label={`Go to ${index === 0 ? "cover" : index === totalPages - 1 ? "back cover" : `meal ${index}`}`} aria-current={index === page ? "page" : undefined} />
-            ))}
+          <div className="min-w-[78px] text-center text-xs font-black text-[#52635a] sm:text-sm" aria-live="polite">
+            {page === 0 ? "Cover" : page === totalPages - 1 ? "Back cover" : `Page ${page} of ${totalPages - 2}`}
           </div>
           <button type="button" className="justify-self-end rounded-full border-2 border-[#2d6d47] bg-white px-3 py-2.5 text-xs font-black text-[#285b3e] shadow-[0_4px_0_#b8cfbd] transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-35 sm:px-[17px] sm:text-base" onClick={() => goToPage(page + 1)} disabled={page === totalPages - 1}>Next <span aria-hidden="true">→</span></button>
         </div>
