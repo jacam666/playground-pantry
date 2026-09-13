@@ -12,8 +12,8 @@ type BookPage =
 
 // Add Claire's photos to public/images/meals, then add each image path here.
 const meals: Meal[] = [
-  { title: "Salmon En Croute with New Potatoes", description: "Week 1 • Monday", accent: "#65a30d", ingredients: [] },
-  { title: "Jerk Chicken with Rice", description: "Week 1 • Tuesday", accent: "#0891b2", ingredients: [] },
+  { title: "Salmon En Croute with New Potatoes", description: "Week 1 • Monday", image: "/images/salmon-encroute-meal-2.png", accent: "#65a30d", ingredients: [] },
+  { title: "Jerk Chicken with Rice", description: "Week 1 • Tuesday", image: "/images/jerk-chicken-meal-2.png", accent: "#0891b2", ingredients: [] },
   { title: "Sausage, Mash, Gravy and Yorkshire Pudding", description: "Week 1 • Wednesday", accent: "#ef4444", ingredients: [] },
   { title: "Spaghetti Bolognese", description: "Week 1 • Thursday", accent: "#f59e0b", ingredients: [] },
   { title: "Breaded Fish with Potato Waffles", description: "Week 1 • Friday", accent: "#9333ea", ingredients: [] },
@@ -30,8 +30,8 @@ const meals: Meal[] = [
 ];
 
 const vegetarianMeals: Meal[] = [
-  { title: "Creamy Vegetable Pie", description: "Week 1 • Monday", accent: "#65a30d", ingredients: [] },
-  { title: "Sweet Potato Curry", description: "Week 1 • Tuesday", accent: "#0891b2", ingredients: [] },
+  { title: "Creamy Vegetable Pie", description: "Week 1 • Monday", image: "/images/creamy-veg-pie-meal.png", accent: "#65a30d", ingredients: [] },
+  { title: "Sweet Potato Curry", description: "Week 1 • Tuesday", image: "/images/sweet-potato-curry-meal.jpeg", accent: "#0891b2", ingredients: [] },
   { title: "Roasted Veg and Tomato Pasta Bake", description: "Week 1 • Wednesday", accent: "#ef4444", ingredients: [] },
   { title: "Sweetcorn Fritter", description: "Week 1 • Thursday", accent: "#f59e0b", ingredients: [] },
   { title: "Margherita Pizza", description: "Week 1 • Friday", accent: "#9333ea", ingredients: [] },
@@ -77,11 +77,20 @@ export default function MealGalleryPage() {
 
     if (nextDirection === "next") setPage(nextPage);
 
-    turnTimer.current = setTimeout(() => {
-      if (nextDirection === "previous") setPage(nextPage);
-      setIsTurning(false);
-      turnTimer.current = null;
-    }, 820);
+    if (nextDirection === "previous") {
+      turnTimer.current = setTimeout(() => {
+        setPage(nextPage);
+        turnTimer.current = setTimeout(() => {
+          setIsTurning(false);
+          turnTimer.current = null;
+        }, 410);
+      }, 410);
+    } else {
+      turnTimer.current = setTimeout(() => {
+        setIsTurning(false);
+        turnTimer.current = null;
+      }, 820);
+    }
   }, [isTurning, page, totalPages]);
 
   useEffect(() => {
@@ -125,7 +134,7 @@ export default function MealGalleryPage() {
 
       <section className={`${styles.bookArea} relative mx-auto max-w-[840px] px-4 pb-16 sm:px-6`} aria-label="Claire's meal book">
         <div className={styles.bookShadow} aria-hidden="true" />
-        <article className={`${styles.book} ${isTurning ? direction === "next" ? styles.turnNext : styles.turnPrevious : ""}`} key={page}>
+        <article className={`${styles.book} ${isTurning ? direction === "next" ? styles.turnNext : styles.turnPrevious : ""}`}>
           <div className={styles.pageEdges} aria-hidden="true" />
           {page === 0 && (
             <div className={`${styles.cover} ${styles.ancientCover} ${styles.frontCover} absolute inset-0 flex flex-col items-center overflow-hidden p-[clamp(28px,7vw,64px)] text-center`}>
