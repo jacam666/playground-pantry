@@ -37,34 +37,36 @@ export default function Home() {
   };
 
   return (
-    // removed text-white — it was overriding all text colours globally
     <main className="min-h-screen bg-blue-50 text-slate-900">
 
       <Navbar />
       {/* ── Hero ── */}
-      <section className="bg-gray-50 px-6 py-12">
-        <div className="mx-auto flex max-w-7xl flex-col items-center text-center">
-          <video
-            ref={logoVideoRef}
-            src="/videos/logo-animation.mp4"
-            autoPlay
-            muted
-            playsInline
-            loop
-            onEnded={() => handleVideoEnded(logoVideoRef.current)}
-            className="block aspect-square w-1/2 sm:w-1/3 rounded-[1.3rem] object-cover mb-8"
-          />
-          {/* <Image
-            src="/images/Playground-Pantry-logo.png"
-            alt="Playground Pantry"
-            width={500}
-            height={500}
-            className="mb-8 h-auto w-48 rounded-full shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-2xl sm:w-64"
-          /> */}
-
-          <section className="w-full px-6 pb-6 pt-0">
-            <div className="mx-auto max-w-4xl">
-              <div className="relative mx-auto w-full max-w-[480px] overflow-hidden rounded-[2rem] border-4 border-slate-900 bg-slate-900 shadow-[0_20px_60px_rgba(15,23,42,0.18)]">
+      <section className="bg-white px-6 py-12">
+        <div className="mx-auto flex max-w-7xl flex-col items-center text-center ">
+          <div className="mb-8">
+            <video
+              ref={logoVideoRef}
+              // src="/videos/logo-animation.mp4"
+              src="/videos/festive-logo.mp4"
+              autoPlay
+              muted
+              playsInline
+              loop
+              controls={false}
+              onEnded={() => handleVideoEnded(logoVideoRef.current)}
+              className="mx-auto mb-0 block aspect-square  rounded-[1.3rem] object-cover sm:w-[42rem]"
+            />
+          </div>
+          <section className="w-full pb-6 pt-0">
+            <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6 md:gap-10">
+              <Image
+                src="/images/Waving-Playground-Pantry-Snowman.png"
+                alt="Playground Pantry"
+                width={500}
+                height={500}
+                className="h-auto w-12 shrink-0 rounded-full p-1  mb-12 sm:mb-0 w-66"
+              />
+              <div className="relative w-full min-w-0 max-w-[480px] overflow-hidden rounded-[2rem] border-4 border-slate-900 bg-slate-900 shadow-[0_20px_60px_rgba(15,23,42,0.18)]">
                 <video
                   ref={heroVideoRef}
                   src="/videos/Video-Project-17-v2.mp4"
@@ -74,7 +76,6 @@ export default function Home() {
                   onEnded={() => handleVideoEnded(heroVideoRef.current)}
                   className="block aspect-square w-full rounded-[1.3rem] object-cover"
                 />
-
                 <button
                   type="button"
                   onClick={() => setIsMuted((prev) => !prev)}
@@ -84,6 +85,13 @@ export default function Home() {
                   {isMuted ? "Sound on" : "Sound off"}
                 </button>
               </div>
+              <Image
+                src="/images/Snow-Dusted Christmas Tree with Wrapped Gifts.png"
+                alt="Snow-Dusted Christmas Tree with Wrapped Gifts"
+                width={500}
+                height={500}
+                className="h-auto w-12 shrink-0 rounded-full p-1 mt-12 sm:mt-0 w-66 "
+              />
             </div>
           </section>
           <div className="mx-auto max-w-3xl">
@@ -104,7 +112,7 @@ export default function Home() {
             <Link href="#menus" className="group flex flex-col items-center gap-3">
               <div className="rounded-3xl">
                 <Image
-                  src="/images/strawberry-see-our-menus-button.png"
+                  src="/images/Festive-See-Our-Menus-Button-1.png"
                   alt="See our menus"
                   width={1672}
                   height={941}
@@ -130,7 +138,7 @@ export default function Home() {
             <Link href="#contact" className="group flex flex-col items-center gap-3">
               <div className="rounded-3xl">
                 <Image
-                  src="/images/broccoli-get-in-touch-button-mirrored.png"
+                  src="/images/Festive-broccoli-Get-in-Touch-button.png"
                   alt="Get in touch"
                   width={1672}
                   height={941}
@@ -164,8 +172,19 @@ export default function Home() {
               className="mx-auto block h-auto w-full mb-12 object-cover object-center"
               style={{ aspectRatio: "1600 / 400" }}
             /> */}
-            <Image
+            {/* <Image
               src="/images/autumn-winter-menus-mascots-winter-clothes-removebg-preview.png"
+              alt="Playground Pantry"
+              width={1600}
+              height={400}
+              loading="eager"
+              className="mx-auto block h-auto w-full mb-12 object-contain object-center"
+            // style={{ aspectRatio: "100 / 50" }}
+            />
+          </div>
+          <div> */}
+            <Image
+              src="/images/Festive-Playground-Pantry-Winter-Banner.png"
               alt="Playground Pantry"
               width={1600}
               height={400}
