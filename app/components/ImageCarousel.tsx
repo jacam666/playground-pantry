@@ -4,7 +4,8 @@ import Image from "next/image";
 import { useState } from "react";
 
 const slides = [
-    { src: "/images/calendar-images/rotation-image.png", label: "Menu Rotation" },
+    // { src: "/images/calendar-images/rotation-image.png", label: "Menu Rotation" },
+    { src: "/images/calendar-images/Festive-Playground-Pantry-Menu-Rotation-Poster.png", label: "Menu Rotation" },
     { src: "/images/calendar-images/sept-2026.png", label: "September 2026" },
     { src: "/images/calendar-images/oct-2026.png", label: "October 2026" },
     { src: "/images/calendar-images/november-2026.png", label: "November 2026" },

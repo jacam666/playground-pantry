@@ -41,9 +41,9 @@ export default function Home() {
 
       <Navbar />
       {/* ── Hero ── */}
-      <section className="bg-white px-6 py-12">
+      <section className="bg-white bg-[url('/images/Icy-blue-Christmas-bauble-border.png')] bg-[length:100%_auto]  px-6 py-12">
         <div className="mx-auto flex max-w-7xl flex-col items-center text-center ">
-          <div className="mb-8">
+          <div className="isolate mx-auto w-full max-w-[42rem] overflow-hidden mix-blend-multiply sm:rounded-full sm:mix-blend-normal">
             <video
               ref={logoVideoRef}
               // src="/videos/logo-animation.mp4"
@@ -54,7 +54,7 @@ export default function Home() {
               loop
               controls={false}
               onEnded={() => handleVideoEnded(logoVideoRef.current)}
-              className="mx-auto mb-0 block aspect-square  rounded-[1.3rem] object-cover sm:w-[42rem]"
+              className="mx-auto mb-0 block aspect-square  rounded-full object-cover sm:w-[42rem] transparent bg-transparent"
             />
           </div>
           <section className="w-full pb-6 pt-0">
@@ -268,10 +268,13 @@ export default function Home() {
       </section>
 
       {/* meal rotation images */}
-      <section id="meal-calendars" className="bg-slate-50 px-6 sm:pt-16 pb-16">
+      <section
+        id="meal-calendars"
+        className="bg-slate-50 px-6 pb-16 pt-8 sm:pt-16 sm:bg-[url('/images/new-year-background-with-realistic-festive-gifts-box-snowfall-with-christmas-tree-free-photo.jpg')] sm:bg-cover sm:bg-no-repeat"
+      >
         <div className="mx-auto mb-10 max-w-7xl text-center">
-          <h2 className="mb-3 text-4xl font-bold text-slate-900 sm:text-5xl">Meal Calendars</h2>
-          <p className="mx-auto max-w-2xl text-lg text-slate-600">
+          <h2 className="mb-3 text-4xl font-bold text-slate-900 sm:text-white sm:text-5xl">Meal Calendars</h2>
+          <p className="mx-auto max-w-2xl text-lg text-slate-600 sm:text-white">
             Browse our monthly meal calendars so you always know what&apos;s on the menu.
           </p>
         </div>
