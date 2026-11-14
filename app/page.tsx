@@ -41,9 +41,9 @@ export default function Home() {
 
       <Navbar />
       {/* ── Hero ── */}
-      <section className="bg-white bg-[url('/images/Icy-blue-Christmas-bauble-border.png')] bg-[length:100%_auto]  px-6 py-12">
+      <section className="bg-white bg-[url('/images/Seamless-Evergreen-Christmas.png')] bg-[length:100%_auto]  px-6 py-12">
         <div className="mx-auto flex max-w-7xl flex-col items-center text-center ">
-          <div className="isolate mx-auto w-full max-w-[42rem] overflow-hidden mix-blend-multiply sm:rounded-full sm:mix-blend-normal">
+          <div className="isolate mx-auto w-full max-w-[42rem] overflow-hidden mix-blend-multiply sm:rounded-fulll">
             <video
               ref={logoVideoRef}
               // src="/videos/logo-animation.mp4"
