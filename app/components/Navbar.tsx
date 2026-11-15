@@ -18,7 +18,7 @@ export default function Navbar() {
 
   return (
     // <header className="sticky top-0 z-20 bg-green-50/95 backdrop-blur shadow-sm border-t-4 border-green-400">
-    <header className="sticky top-0 z-20 bg-[#fffaf2]/95 shadow-sm backdrop-blur">
+    <header className="sticky top-0 z-20 bg-white">
   <div
   aria-hidden="true"
   className="h-8 bg-[url('/images/navbar-garland.png')] bg-[length:auto_135px] bg-top bg-repeat-x sm:h-10 sm:bg-[length:auto_170px]"

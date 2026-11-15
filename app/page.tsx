@@ -58,7 +58,7 @@ export default function Home() {
             />
           </div>
           <section className="w-full pb-6 pt-0">
-            <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6 md:gap-10">
+            <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center gap-4 lg:flex-row md:gap-6 md:gap-10">
               <Image
                 src="/images/Waving-Playground-Pantry-Snowman.png"
                 alt="Playground Pantry"
@@ -66,10 +66,10 @@ export default function Home() {
                 height={500}
                 className="h-auto w-12 shrink-0 rounded-full p-1  mb-12 sm:mb-0 w-66"
               />
-              <div className="relative w-full min-w-0 max-w-[480px] overflow-hidden rounded-[2rem] border-4 border-slate-900 bg-slate-900 shadow-[0_20px_60px_rgba(15,23,42,0.18)]">
+              <div className="relative w-full min-w-0 max-w-[300px] overflow-hidden rounded-[2rem] border-3 border-slate-900 bg-slate-900 shadow-[0_20px_60px_rgba(15,23,42,0.18)]">
                 <video
                   ref={heroVideoRef}
-                  src="/videos/Video-Project-17-v2.mp4"
+                  src="/videos/pantry-xmas-video.mp4"
                   autoPlay
                   muted={isMuted}
                   playsInline
@@ -124,7 +124,7 @@ export default function Home() {
               {/* <span className="text-base font-black text-slate-700 tracking-wide">SEE OUR MENUS 🍽️</span> */}
             </Link>
 
-            <Image
+            {/* <Image
               src="/videos/dancing-carrot-transparent.webp"
               alt=""
               aria-hidden="true"
@@ -133,7 +133,7 @@ export default function Home() {
               unoptimized
               loading="eager"
               className="hidden h-auto w-90 object-contain my-auto mx-auto md:block"
-            />
+            /> */}
 
             <Link href="#contact" className="group flex flex-col items-center gap-3">
               <div className="rounded-3xl">
