@@ -241,7 +241,7 @@ export default function Home() {
         <div className="mx-auto mt-12 grid max-w-7xl grid-cols-1 md:grid-cols-2 gap-10 px-6">
           <div className="overflow-hidden rounded-[2rem] border-4 border-slate-900 bg-slate-900 shadow-[0_20px_50px_rgba(15,23,42,0.15)]">
             <video
-              src="/videos/mascot-menu-window-display.mp4"
+              src="videos/outside-kitchen-xmas-video.mp4"
               autoPlay
               loop
               muted
@@ -253,7 +253,7 @@ export default function Home() {
 
           <div className="overflow-hidden rounded-[2rem] border-4 border-slate-900 bg-slate-900 shadow-[0_20px_50px_rgba(15,23,42,0.15)]">
             <video
-              src="/videos/kitchen-mascot-video.mp4"
+              src="videos/inside-kitchen-xmas-video.mp4"
               autoPlay
               loop
               muted
