@@ -363,7 +363,7 @@ export default function Home() {
 
 
       {/* ── Payments ── */}
-      <section id="payments" className="scroll-mt-24 bg-purple-50 px-6 py-16"
+      <section  id="payments" className="scroll-mt-24 bg-purple-50 px-6 py-16"
         style={{
           backgroundImage: "radial-gradient(circle, #d8b4fe 1px, transparent 1px)",
           backgroundSize: "28px 28px",
@@ -533,6 +533,7 @@ export default function Home() {
       </section>
 
       {/* ── Footer ── */}
+      
       <footer className="bg-green-400 px-6 py-10 text-center text-white">
         <Image
           src="/images/3d-logo-image.jpeg"

@@ -17,7 +17,12 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-20 bg-green-50/95 backdrop-blur shadow-sm border-t-4 border-green-400">
+    // <header className="sticky top-0 z-20 bg-green-50/95 backdrop-blur shadow-sm border-t-4 border-green-400">
+    <header className="sticky top-0 z-20 bg-[#fffaf2]/95 shadow-sm backdrop-blur">
+  <div
+  aria-hidden="true"
+  className="h-8 bg-[url('/images/navbar-garland.png')] bg-[length:auto_135px] bg-top bg-repeat-x sm:h-10 sm:bg-[length:auto_170px]"
+/>
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
 
         {/* logo */}
@@ -39,7 +44,8 @@ export default function Navbar() {
               <Link
                 key={l.href}
                 href={l.href}
-                className="rounded-full bg-green-400 px-4 py-2 text-white transition hover:bg-green-500 hover:scale-105"
+                // className="rounded-full bg-green-400 px-4 py-2 text-white transition hover:bg-green-500 hover:scale-105"
+                className="rounded-full bg-red-700 px-4 py-2 text-white transition hover:bg-red-800 hover:scale-105"
               >
                 {l.label}
               </Link>
@@ -69,6 +75,7 @@ export default function Navbar() {
 
       {/* mobile dropdown */}
       {open && (
+        // <nav className="flex flex-col gap-1 border-t border-green-200 bg-green-50 px-6 py-4 md:hidden">
         <nav className="flex flex-col gap-1 border-t border-green-200 bg-green-50 px-6 py-4 md:hidden">
           {links.map((l) =>
             l.highlight ? (
@@ -76,7 +83,7 @@ export default function Navbar() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="rounded-xl bg-green-400 px-4 py-3 text-center text-sm font-bold text-white transition hover:bg-green-500"
+                className="rounded-xl bg-red-700 px-4 py-3 text-center text-sm font-bold text-white transition hover:bg-red-800"
               >
                 {l.label}
               </Link>
