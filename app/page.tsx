@@ -264,7 +264,7 @@ export default function Home() {
           </div>
         </div>
         <h1 className="mt-12 text-center text-3xl font-bold text-slate-900 px-6">Menus can also be found on the Kitchen Windows as you walk into school.</h1>
-        <div className="flex flex-col items-center justify-center mt-6">
+        <div className="flex flex-col items-center mx-2 justify-center mt-6">
           <Image
             src="/images/Version-1-Badges-5.png"
             alt="hygiene-rating"
@@ -273,7 +273,7 @@ export default function Home() {
             priority
             className="h-auto "
           />
-          <h1 className="text-center text-2xl font-bold text-green-900 px-10 mt-6 py-4 shadow-lg ring-1 ring-slate-900/5 rounded-2xl">Proudly rated 5 &ndash; Very Good <br /><span className="text-lg font-normal"> Inspected 18 November 2026</span></h1>
+          <h1 className="text-center text-lg sm:text-3xl font-bold text-green-900 px-10 mt-6 py-4 shadow-lg ring-1 ring-slate-900/5 rounded-2xl">Proudly rated 5 &ndash; Very Good <br /><span className="text-lg font-normal"> Inspected 18 November 2026</span></h1>
         </div>
 
       </section>
