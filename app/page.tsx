@@ -263,7 +263,18 @@ export default function Home() {
             />
           </div>
         </div>
-        <h1 className="mt-12 text-center text-3xl font-bold text-slate-900 px-6">Menu&apos;s can also be found on the Kitchen Windows as you walk into school.</h1>
+        <h1 className="mt-12 text-center text-3xl font-bold text-slate-900 px-6">Menus can also be found on the Kitchen Windows as you walk into school.</h1>
+        <div className="flex flex-col items-center justify-center mt-6">
+          <Image
+            src="/images/Version-1-Badges-5.png"
+            alt="hygiene-rating"
+            width={400}
+            height={400}
+            priority
+            className="h-auto "
+          />
+          <h1 className="text-center text-2xl font-bold text-green-900 px-10 mt-6 py-4 shadow-lg ring-1 ring-slate-900/5 rounded-2xl">Proudly rated 5 &ndash; Very Good <br /><span className="text-lg font-normal"> Inspected 18 November 2026</span></h1>
+        </div>
 
       </section>
 
@@ -363,7 +374,7 @@ export default function Home() {
 
 
       {/* ── Payments ── */}
-      <section  id="payments" className="scroll-mt-24 bg-purple-50 px-6 py-16"
+      <section id="payments" className="scroll-mt-24 bg-purple-50 px-6 py-16"
         style={{
           backgroundImage: "radial-gradient(circle, #d8b4fe 1px, transparent 1px)",
           backgroundSize: "28px 28px",
@@ -533,7 +544,7 @@ export default function Home() {
       </section>
 
       {/* ── Footer ── */}
-      
+
       <footer className="bg-green-400 px-6 py-10 text-center text-white">
         <Image
           src="/images/3d-logo-image.jpeg"

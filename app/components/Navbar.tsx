@@ -30,12 +30,13 @@ export default function Navbar() {
           <Image
             src="/images/3d-logo-image-removebg-preview.png"
             alt="Playground Pantry home"
-            width={90}
+            width={200}
             height={36}
             priority
             className="h-auto w-[60px] sm:w-[70px]"
           />
         </Link>
+          
 
         {/* desktop nav */}
         <nav className="hidden md:flex items-center gap-1 text-sm font-semibold text-gray-700">
